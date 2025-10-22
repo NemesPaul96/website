@@ -530,6 +530,24 @@ textarea {
     width: 25px;
     height: 25px;
 }
+    .social-icons a {
+    display: inline-block;
+    margin-right: 10px; /* spacing between icons */
+    vertical-align: middle;
+}
+
+.social-icons a:last-child {
+    margin-right: 0; /* remove extra space after last icon */
+}
+
+.social-icons img {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: none;
+    vertical-align: middle;
+}
+
 }
 
 /* Mobile - 360px and below */
@@ -593,6 +611,24 @@ textarea {
     width: 25px;
     height: 25px;
 }
+    .social-icons a {
+    display: inline-block;
+    margin-right: 10px; /* spacing between icons */
+    vertical-align: middle;
+}
+
+.social-icons a:last-child {
+    margin-right: 0; /* remove extra space after last icon */
+}
+
+.social-icons img {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: none;
+    vertical-align: middle;
+}
+
 }
 
 /* Mobile - 320px and below */
@@ -671,6 +707,24 @@ textarea {
     width: 25px;
     height: 25px;
 }
+    .social-icons a {
+    display: inline-block;
+    margin-right: 10px; /* spacing between icons */
+    vertical-align: middle;
+}
+
+.social-icons a:last-child {
+    margin-right: 0; /* remove extra space after last icon */
+}
+
+.social-icons img {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: none;
+    vertical-align: middle;
+}
+
 }
 
 /* ================= TABLET & DESKTOP MEDIA QUERIES ================= */
