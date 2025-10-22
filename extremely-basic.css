@@ -1,4 +1,4 @@
-//* EXTREMELY BASIC CSS - COMPATIBLE WITH 2000+ DEVICES AND BROWSERS */
+/* EXTREMELY BASIC CSS - COMPATIBLE WITH 2000+ DEVICES AND BROWSERS */
 
 /* ================= RESET & BASIC STYLES ================= */
 * {
@@ -376,6 +376,28 @@ textarea {
     margin: 0;
 }
 
+/* ================= HERO SECTION - DESKTOP DEFAULT ================= */
+.hero-content {
+    display: block;
+}
+
+.logo {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-img {
+    display: block;
+    width: 100%;
+}
+
+.hero-info {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
 /* ================= BASIC MODE BANNER ================= */
 #basic-mode-banner {
     display: block !important;
@@ -429,7 +451,208 @@ textarea {
     border-radius: 3px;
 }
 
-/* ================= SIMPLE MEDIA QUERIES ================= */
+/* ================= MOBILE MEDIA QUERIES ================= */
+
+/* Mobile - 384px and below */
+@media screen and (max-width: 384px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .hero, .why, .what, .reviews, .steps, .services, 
+    .offer, .contact, .buy, .gallery, footer {
+        padding: 15px 8px;
+        margin-bottom: 15px;
+    }
+    
+    h1 {
+        font-size: 20px;
+        margin: 15px 0;
+    }
+    
+    h2 {
+        font-size: 18px;
+        margin: 13px 0;
+    }
+    
+    h3 {
+        font-size: 16px;
+        margin: 11px 0;
+    }
+    
+    p {
+        font-size: 14px;
+        margin: 10px 0;
+    }
+    
+    /* Hero section mobile layout: logo -> image -> hero-info */
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .logo {
+        order: 1;
+        margin-bottom: 10px;
+    }
+    
+    .hero-img {
+        order: 2;
+        margin: 10px 0;
+    }
+    
+    .hero-info {
+        order: 3;
+        margin-top: 10px;
+    }
+    
+    .logo img {
+        width: 180px;
+    }
+    
+    span.seven-days {
+        font-size: 28px;
+    }
+    
+    a.btn1, a.btn2, .offer a, .buy-now a, form button {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+    
+    .why-card, .service {
+        margin: 10px 0;
+        padding: 12px;
+    }
+}
+
+/* Mobile - 360px and below */
+@media screen and (max-width: 360px) {
+    body {
+        font-size: 13px;
+    }
+    
+    .hero, .why, .what, .reviews, .steps, .services, 
+    .offer, .contact, .buy, .gallery, footer {
+        padding: 12px 6px;
+        margin-bottom: 12px;
+    }
+    
+    h1 {
+        font-size: 18px;
+        margin: 12px 0;
+    }
+    
+    h2 {
+        font-size: 16px;
+        margin: 11px 0;
+    }
+    
+    h3 {
+        font-size: 14px;
+        margin: 10px 0;
+    }
+    
+    p {
+        font-size: 13px;
+        margin: 8px 0;
+    }
+    
+    .logo img {
+        width: 160px;
+    }
+    
+    span.seven-days {
+        font-size: 24px;
+    }
+    
+    a.btn1, a.btn2, .offer a, .buy-now a, form button {
+        font-size: 13px;
+        padding: 8px 14px;
+        width: 95%;
+    }
+    
+    .why-card, .service {
+        margin: 8px 0;
+        padding: 10px;
+    }
+    
+    .step span {
+        font-size: 36px;
+    }
+}
+
+/* Mobile - 320px and below */
+@media screen and (max-width: 320px) {
+    body {
+        font-size: 12px;
+    }
+    
+    .hero, .why, .what, .reviews, .steps, .services, 
+    .offer, .contact, .buy, .gallery, footer {
+        padding: 10px 5px;
+        margin-bottom: 10px;
+    }
+    
+    h1 {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+    
+    h2 {
+        font-size: 14px;
+        margin: 9px 0;
+    }
+    
+    h3 {
+        font-size: 13px;
+        margin: 8px 0;
+    }
+    
+    p {
+        font-size: 12px;
+        margin: 6px 0;
+        line-height: 1.4;
+    }
+    
+    .logo img {
+        width: 140px;
+    }
+    
+    span.seven-days {
+        font-size: 20px;
+    }
+    
+    span.wow, span.first-dance {
+        font-size: 18px;
+    }
+    
+    a.btn1, a.btn2, .offer a, .buy-now a, form button {
+        font-size: 12px;
+        padding: 6px 12px;
+        width: 98%;
+    }
+    
+    .why-card, .service {
+        margin: 6px 0;
+        padding: 8px;
+    }
+    
+    .step span {
+        font-size: 32px;
+    }
+    
+    .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    input, select, textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* ================= TABLET & DESKTOP MEDIA QUERIES ================= */
 /* Tablet - 768px and above */
 @media screen and (min-width: 768px) {
     body {
