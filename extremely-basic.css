@@ -593,6 +593,13 @@ textarea {
 .social-icons img {
     display: inline-block;
 }
+    .copyright {
+    white-space: nowrap;
+    margin: 0 auto;
+}
+.copyright img{
+    vertical-align: middle;
+}
 }
 
 /* Mobile - 360px and below */
@@ -657,6 +664,13 @@ textarea {
 }
 .social-icons img {
     display: inline-block;
+}
+    .copyright {
+    white-space: nowrap;
+    margin: 0 auto;
+}
+.copyright img{
+    vertical-align: middle;
 }
 }
 
@@ -737,6 +751,13 @@ textarea {
 }
 .social-icons img {
     display: inline-block;
+}
+.copyright {
+    white-space: nowrap;
+    margin: 0 auto;
+}
+.copyright img{
+    vertical-align: middle;
 }
 }
 
