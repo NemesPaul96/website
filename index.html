@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IKIM DANCE</title>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+<!-- Basic Mode Website Banner -->
+<div id="basic-mode-banner" style="display: none;">
+  <div class="banner-content">
+    <div class="banner-info">
+      <span class="banner-icon">ℹ️</span>
+      <span class="banner-text">You are viewing the basic version of this website. Some features may be limited due to your device/browser compatibility. <a href="fallback-page.html" class="banner-link">Back to Choose Mode</a></span>
+    </div><!-- /banner-info -->
+    <div class="banner-actions">
+      <button id="close-banner" aria-label="Close banner">×</button>
+    </div>
+  </div><!-- /banner-content -->
+</div><!-- /basic-mode-banner -->
+
+  <!-- noscript -->
+<!-- <noscript> is an HTML tag that shows content only if JavaScript is disabled in the user's browser -->
+<!-- 
+	It’s not a script — it’s a fallback container 
+	It’s triggered automatically by the browser when JavaScript is turned off or blocked
+	Without JavaScript, Your animations, buttons, polyfills, and fallback logic won’t run
+	Your site might appear broken or blank
+	Displayed custom html css message as guide for users
+	-->
+
+<noscript>
+  <style>
+     body {opacity: 1 !important;visibility: visible !important;}
+    .animate {opacity: 1 !important;transform: none !important;visibility: visible !important;}
+     main, footer, .hero, .gallery, .contact {display: none !important;}
+    .noscript-container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      font-family: Arial, sans-serif;
+      color: #333;
+      text-align: center;
+    }
+
+    .noscript-container h1 {font-size: 22px;margin-bottom: 10px;color: #c00;}
+    .noscript-container p {font-size: 16px;line-height: 1.5;margin-bottom: 10px;}
+    .noscript-container img {width: 40px;margin-bottom: 10px;}
+    .noscript-container a {color: #0066cc;text-decoration: underline;}
+
+    @media (max-width: 320px) {
+      .noscript-container {margin: 20px;padding: 15px;}
+      .noscript-container h1 {font-size: 18px;}
+      .noscript-container p {font-size: 14px;}
+      .noscript-container img {width: 30px;}
+    }
+  </style>
+
+  <div class="noscript-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/565/565547.png" alt="Warning Icon">
+    <h1>⚠️ JavaScript Is Disabled</h1>
+    <p>This website requires JavaScript to function properly.</p>
+    <p>Without it, interactive features, animations, and layout enhancements won’t work.</p>
+    <p><strong>Why you’re seeing this:</strong> Your browser has JavaScript turned off, or it’s blocked by an extension or network setting.</p>
+    <p>To enable JavaScript, follow this guide: <a href="https://www.enable-javascript.com/" target="_blank">How to enable JavaScript</a></p>
+    <p>If you need help or prefer a simplified version of the site, contact us at <strong>support@example.com</strong></p>
+  </div>
+  
+</noscript>
+<!-- /END noscript -->
+  
+<main>
+
+	<button onclick="scrollToTop()" id="backToTop" aria-label="Back to top">
+		<img src="assets/icons/arrow.svg" alt="Back to top">
+	</button>
+	<div class="hero">
+
+		<div class="logo">
+			<img src="assets/Logo.svg" alt="logo IKIM DANCE" class="animate animate-slide-up">
+		</div><!--/end logo-->
+
+		<div class="hero-content">
+
+			<div class="hero-info flex-column animate animate-from-left">
+				<div class="hero-info-title">
+					<h1 class="animate animate-from-left animate-delay-1">Dance Your Way, Anytime, Anywhere in just</h1> 
+					<span class="seven-days animate animate-from-bottom animate-delay-1">7 days</span>
+				</div>
+				<p class="animate animate-from-left animate-delay-2">Custom wedding dance choreography, filmed just for you by a world-class dance coach. No awkward classes. No stress. Just your perfect moment, made easy.</p>
+				<div class="hero-buttons animate animate-bounce animate-delay-3">
+					<a class="btn1" href="https://www.google.ro/" target="_blank">Start Now</a>
+					<a class="btn2" href="https://www.google.ro/" target="_blank">Learn More</a>
+				</div>
+			</div><!--/end hero-info-->
+
+			<div class="hero-img animate animate-grow">
+				<img src="assets/images/hero-img.png" alt="weeding image couple">
+			</div>
+
+		</div><!--/end hero-content-->
+
+	</div><!--/end hero-->
+
+	<div class="why flex-row">
+
+		<div class="left animate animate-from-left">
+			<h2>WHY THIS WORKS: A Unique Dance Experience Tailored Just for You</h2>
+		</div>
+
+		<div class="right flex-column">
+
+			<div class="why-description animate animate-from-right animate-delay-1">
+				<p>For <span>just $150</span> (original price $300, <span>50% OFF</span>), create a memorable moment that lasts a lifetime. Share your song and wedding details, and we'll craft a personalized dance that reflects your love story.</p>
+			</div>
+
+			<div class="why-reasons flex-row">
+
+				<div class="why-card flex-column animate animate-flip animate-delay-1">
+					<div class="why-icons flex-row">
+						<img src="assets/icons/music.svg" alt="music note icon">
+						<img src="assets/icons/booking.svg" alt="booking icon">
+					</div>
+					<h3>You Investment</h3>
+					<p>Share your song and wedding details</p>
+				</div><!--/end why-investment-->
+
+				<div class="why-card flex-column animate animate-flip animate-delay-2">
+					<div class="why-icons flex-row">
+						<img src="assets/icons/camera-black.svg" alt="camera icon">
+						<img src="assets/icons/dancing.svg" alt="dance icon">
+					</div>
+					<h3>How it works </h3>
+					<p>We choreograph, film and deliver a dance</p>
+				</div><!--/end why-it-works-->
+
+			</div><!--/end why-reasons-->
+
+		</div><!--/end right section-->
+
+	</div><!--/end why-->
+
+	<section class="gallery section100 flex-column">
+		<img src="assets/images/gallery-section-img.jpg" alt="weeding dance" class="animate animate-grow">
+	</section>
+
+	<section class="what section100 flex-row">
+
+		<div class="what-left flex-column">
+			<h2 class="animate animate-from-left">WHAT MAKES THIS DIFFERENT: No Classes. No Stress. Just Magic.</h2>
+
+			<div class="what-left-bottom animate animate-from-left animate-delay-1">
+				<div class="wow-title flex-row">
+					<h3>Made to</h3> <span class="wow">wow</span> <h3>Not Overwhelm</h3>
+				</div>
+				<p>Looks impressive without being complicated.</p>
+			</div>
+
+		</div><!--/end what-left-->
+
+		<div class="what-right flex-row">
+
+			<div class="why-card flex-column animate animate-flip animate-delay-4">
+				<div class="why-icons flex-row">
+					<img src="assets/icons/house.svg" alt="home icon">
+				</div>
+				<h3>Learn from home</h3>
+				<p>No studio, no group, no classes, no pressure</p>
+			</div><!--/end learn card-->
+
+			<div class="why-card flex-column animate animate-flip animate-delay-4">
+				<div class="why-icons flex-row">
+					<img src="assets/icons/camera.svg" alt="camera icon">
+				</div>
+				<h3>Filmed Just for You</h3>
+				<p>Your choreography is filmed specifically for you, not reused</p>
+			</div><!--/end filmed card-->
+
+			<div class="why-card flex-column animate animate-flip animate-delay-4">
+				<div class="why-icons flex-row">
+					<img src="assets/icons/dress.svg" alt="weeding dress icon">
+				</div>
+				<h3>Tailored to Fit You</h3>
+				<p>Adjusted to your skill, song, dress, and dance floor</p>
+			</div><!--/end tailored card-->
+
+			<div class="why-card flex-column animate animate-flip animate-delay-4">
+				<div class="why-icons flex-row">
+					<img src="assets/icons/delivery.svg" alt="delivery icon">
+				</div>
+				<h3>Delivered in 7 Days</h3>
+				<p>Full step-by-step video, easy to follow, stress-free.</p>
+			</div><!--/end delivery card-->
+
+		</div><!--/end what-right-->
+
+	</section><!--/end what section-->
+
+	<section class="reviews section100 flex-row">
+
+		<div class="reviews-left flex-column">
+			<h2 class="animate animate-from-left">REAL REACTIONS FROM COUPLES</h2>
+			<div class="reviews-image animate animate-grow animate-delay-1">
+				<img src="assets/images/revew-img.jpg" alt="Couple at weeding foto">
+			</div>
+		</div><!--/end reviews-left-->
+
+		<div class="reviews-right flex-column">
+			<p class="animate animate-slide-up animate-delay-1">" I feel like it's weird that a standing ovation is basically guaranteed for every single performance." </p>
+			<p class="animate animate-slide-up animate-delay-2">" We danced like pros and got a standing ovation – without leaving our living room." </p>
+			<p class="animate animate-slide-up animate-delay-3">" I cried watching our video before the wedding. It felt so us. So much easier than expected. My husband had fun too!" </p>
+		</div><!--/end reviews-right-->
+
+	</section><!--/end reviews section-->
+
+<section class="steps flex-column">
+
+	<h2 class="animate animate-from-top">HOW IT WORKS: Tree Simple Steps</h2>
+	<div class="steps-box flex-row">
+
+		<div class="step flex-row animate animate-bounce animate-delay-1">
+			<span>1</span>
+			<p>Fill out the short form with your song and wedding info</p>
+		</div>
+		<div class="step flex-row animate animate-bounce animate-delay-2">
+			<span>2</span>
+			<p>Make the payment to confirm your custom choreography</p>
+		</div>
+		<div class="step flex-row animate animate-bounce animate-delay-3">
+			<span>3</span>
+			<p>Receive your video in 7 days – Learn, rehearse, and shine</p>
+		</div>
+	</div><!--/end steps-box-->
+
+</section><!--/end steps section-->
+
+<section class="services section100 flex-column">
+
+	<div class="services-info flex-row">
+		<div class="services-left">
+			<h2 class="animate animate-from-left animate-delay-1">ALL THIS  FOR $150: Everything You Need for a Stunning First Dance</h2>
+		</div>
+		
+		<div class="services-right flex-column animate animate-from-right animate-delay-1">
+			<h3>Originally $300 — enjoy an exclusive 50% discount</h3>
+			<p>A bespoke first dance, designed just for you — elegant, effortless, and delivered in 7 days. Crafted for connection, not perfection.</p>
+		</div>
+	</div><!--/end services info-->
+
+	<div class="services-box flex-row animate animate-from-bottom animate-delay-3">
+
+		<div class="service flex-column animate animate-flip animate-delay-1">
+			<img src="assets/icons/camera.svg" alt="camera icon">
+			<p>A fully customized first dance choreography video</p>
+		</div>
+
+		<div class="service flex-column animate animate-flip animate-delay-2">
+			<img src="assets/icons/message.svg" alt="chat icon">
+			<p>Direct support via email if you have questions</p>
+		</div>
+
+		<div class="service flex-column animate animate-flip animate-delay-3">
+			<img src="assets/icons/dress.svg" alt="weeding dress icon">
+			<p>Choreo adapted to your dress, shoes, space</p>
+		</div>
+
+		<div class="service flex-column animate animate-flip animate-delay-4">
+			<img src="assets/icons/calendar-check.svg" alt="calendar icon">
+			<p>7-day delivery, guaranteed</p>
+		</div>
+
+		<div class="service flex-column animate animate-flip animate-delay-5">
+			<img src="assets/icons/heart.svg" alt="heart icon">
+			<p>Choreographed for connection, not perfection</p>
+		</div>
+
+	</div><!--/end services box-->
+
+</section><!--/end services section-->
+
+<section class="offer section100 flex-column">
+
+	<div class="offer-title animate animate-bounce animate-delay-1">
+		<h2>LIMITED TIME OFFER</h2>
+		<h3>Personalized First Dance at </h3>
+		<h3>50% OFF – Only <span>$150</span></h3>
+	</div><!--/end offer-title-->
+
+	<div class="offer-description animate animate-slide-up animate-delay-2">
+		<p>(Regular price: $300)</p>
+		<p>We're offering a special deal for a limited number of couples.</p>
+		<p>Only 100 slots available.</p>
+	</div><!--/end offer-description-->
+
+	<div class="offer-spots animate animate-slide-up animate-delay-3">
+		<p>52 spots left</p>
+	</div><!--/end offer-description-->
+
+	<a class="animate animate-bounce animate-delay-3" href="https://www.google.ro/">Reserve Your Custom Dance</a>
+
+</section><!--/end offer section-->
+
+<section class="contact section100 flex-column">
+
+	<div class="contact-title">
+		<h2 class="animate animate-from-bottom animate-delay-1">Tell us about your</h2> 
+		<span class="animate animate-from-right animate-delay-1">wedding.</span>
+		<h2 class="animate animate-from-bottom animate-delay-2">We'll handle the rest.</h2>
+	</div>
+
+<form class="animate animate-from-bottom animate-delay-3" action="" method="POST">
+	<!-- Name -->
+	<div class="field flex-column">
+		<label for="name">Name (both partners)</label>
+		<input type="text" id="name" name="name" required minlength="2" placeholder="e.g. Emily White & John Nick">
+	</div>
+	<!-- Email and Phone -->
+	<div class="row">
+		<div class="field flex-column">
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" required  placeholder="you@example.com">
+		</div>
+
+		<div class="field flex-column">
+			<label for="phone">Phone Number</label>
+			<input type="tel" id="phone" name="phone" required  placeholder="Your phone number">
+		</div>
+	</div><!-- /end Email and Phone -->
+
+  <!-- Text and Calendar -->
+ 	<div class="row">
+		<div class="field flex-column">
+			<label for="location">Wedding location (city/state)</label>
+			<input type="text" id="topic" name="location" required placeholder="City, State">
+		</div>
+
+		<div class="field flex-column">
+			<label for="date">Wedding date</label>
+			<input type="date" id="date" name="wedding_date" required  placeholder="Select the day">
+			<img src="assets/icons/calendar.svg" alt="calendar icon" class="calendar-icon">
+		</div>
+	</div><!-- /end Text and Calendar -->
+
+		<!-- Full Text Input -->
+	<div class="field flex-column">
+		<label for="music">Song choice</label>
+		<input type="text" id="subject" name="song_choice" placeholder="Your first dance song">
+	</div>
+	<div class="field flex-column">
+		<!-- Dropdown -->
+		<label for="dancing">Dance experience level</label>
+		<select id="options" name="experience_level">
+			<option value="" disabled selected>Select an option</option>
+			<option value="option1">Begginer</option>
+			<option value="option2">Advanced</option>
+			<option value="option3">Expert</option>
+		</select>
+		<img src="assets/icons/arrow.svg" alt="dropdown arrow" class="arrow-icon">
+	</div>
+		<!-- Text Area -->
+	<div class="field flex-column">
+		<label for="requests">Special requests</label>
+		<textarea id="requests" rows="20" name="special_requests" placeholder="e.g. I'll wear heels, small dance floor"></textarea>
+	</div>
+		<!-- Submit Button -->
+		<button type="submit" class="animate animate-bounce animate-delay-4">Reserve Your Custom Dance - $150</button>
+	</form>
+
+</section><!--/end contact section-->
+
+<section class="buy section100 flex-column animate animate-from-right">
+	<img src="assets/images/buy-section-img.jpg" alt="weeding dance" class="animate animate-grow">
+
+	<div class="buy-now flex-column">
+
+		<div class="buy-title flex-column">
+			<p class="animate animate-slide-up animate-delay-1">Your moment deserves more than a random YouTube tutorial.</p>
+			<h2 class="animate animate-slide-up animate-delay-2">Let's make your</h2> 
+			<span class="first-dance animate animate-from-right animate-delay-2">first dance</span>
+			<h2 class="animate animate-slide-up animate-delay-3">one of the best moments of your life.</h2>
+		</div><!--/end buy-title-->
+
+		<a class="animate animate-bounce animate-delay-3" href="https://www.google.ro/">Get Started – Only $150</a>
+	</div><!--/end buy-now-->
+
+</section><!--/end buy section-->
+
+<footer class="flex-column">
+
+	<div class="footer-info flex-row">
+
+		<div class="footer-logo animate animate-from-left animate-delay-1">
+			<img src="assets/Logo.svg" alt="logo icon" class="animate animate-slide-up">
+		</div>
+
+		<div class="socials flex-column animate animate-from-right">
+			<h3>Contact</h3>
+			<div class="social-icons flex-row">
+				<a href="https://www.facebook.com/" target="_blank"><img src="assets/socials/facebook.svg" alt="facebook social icon" class="animate animate-grow"></a>
+				<a href="https://www.tiktok.com/" target="_blank"><img src="assets/socials/tiktok.svg" alt="tiktok social icon" class="animate animate-grow"></a>
+				<a href="https://www.instagram.com/" target="_blank"><img src="assets/socials/instagram.svg" alt="instagram social icon" class="animate animate-grow"></a>
+				<a href="https://www.youtube.com/" target="_blank"><img src="assets/socials/youtube.svg" alt="youtube social icon" class="animate animate-grow"></a>
+			</div>
+		</div><!--/end socials-->
+
+	</div><!--/end footer-info-->
+	<hr>
+	<div class="copyright flex-row">
+		<img src="assets/icons/copyright.svg" alt="copyright icon">
+		<p class="copyright">2025 Ikim Dance. All rights reserved.</p>
+	</div>
+	
+</footer>
+</main>
+  
+<!-- Contains your fallback message logic for old and outdated devices -->
+<script src="js/fallback.js"></script>
+  
+<!-- Detects and logs the user’s browser, OS, and device info -->
+<!-- Helps you understand what users are accessing your site with, and optionally display it in the fallback -->
+<script src="js/device-check.js"></script>
+  
+<!-- Contains your custom animation logic (ex. fade-ins, scroll effects, transitions) -->
+<script src="js/animations.js"></script>
+
+<!-- Smooth Scroll Logic with CDN + Local + Instant Fallback for last option -->
+<!-- Explanation on how it works inside the js file -->
+<script src="js/smoothscroll-handler.js"></script>
+
+
+<!-- This is the feature your site checks for to decide whether to show the fallback message -->
+<!-- 
+Intersection Observer is a modern browser API that detects when elements enter or leave the viewport. 
+On old devices or outdated browsers, it’s often unsupported — which is why your fallback message appears.
+
+Intersection Observer API It’s used for:
+Lazy-loading images only when they scroll into view
+Triggering animations when elements appear on screen - this is what we use on this website
+Infinite scrolling (loading more content as you scroll)
+...and other features
+-->
+<!-- Polyfill hosted locally due to CDN issues or not existing anymore (original: polyfill.io) -->
+<!-- Source: https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.js -->
+<script src="js/intersection-observer-polyfill.js"></script>
+  
+
+
+<!-- Contains your javascript for button back-to-top -->
+<script src="js/back-to-top.js"></script>
+
+<!-- SCRIPT FOR BASIC MODE DETECTION OF WEBSITE -->
+<script src="js/basic-mode-website.js"></script>
+  
+ <!-- Extremely Basic Mode Script -->
+<script src="js/extremely-basic-mode.js"></script>
+  
+<!-- Static App Form Collection Script 
+<script src="https://static.app/js/static-forms.js" type="text/javascript"></script>
+
+<script src="https://static.app/js/static.js" type="text/javascript"></script>-->
+</body>
+</html>

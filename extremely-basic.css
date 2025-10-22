@@ -1,0 +1,534 @@
+//* EXTREMELY BASIC CSS - COMPATIBLE WITH 2000+ DEVICES AND BROWSERS */
+
+/* ================= RESET & BASIC STYLES ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #000000;
+    background: #ffffff;
+    width: 100%;
+    margin: 0 auto;
+}
+
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ================= HIDE COMPLEX ELEMENTS ================= */
+#backToTop,
+.arrow-icon,
+.calendar-icon,
+.hero-img::after,
+section.buy::after {
+    display: none !important;
+}
+
+/* Remove all pseudo-elements */
+::before,
+::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* ================= BASIC LAYOUT ================= */
+.hero, .why, .what, .reviews, .steps, .services, 
+.offer, .contact, .buy, .gallery, footer {
+    display: block;
+    width: 100%;
+    padding: 20px 10px;
+    margin: 0 auto 20px auto;
+    border-bottom: 1px solid #dddddd;
+}
+
+.section100 {
+    height: auto !important;
+    min-height: auto !important;
+}
+
+/* ================= TYPOGRAPHY ================= */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #1E1E1E;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 18px 0;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 16px 0;
+}
+
+p {
+    text-align: center;
+    margin: 12px 0;
+    color: #4A4A4A;
+    line-height: 1.5;
+}
+
+/* ================= SPECIAL TEXT ELEMENTS ================= */
+span.seven-days,
+span.wow,
+span.first-dance,
+.contact-title span,
+.offer-title h3 span {
+    color: #D86C2C !important;
+    background: none !important;
+    -webkit-text-fill-color: #D86C2C !important;
+    font-weight: bold;
+    display: inline;
+}
+
+span.seven-days {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+span.wow {
+    font-size: 28px;
+}
+
+span.first-dance {
+    font-size: 30px;
+}
+
+/* ================= IMAGES ================= */
+img {
+    display: block;
+    margin: 15px auto;
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
+
+/* Hero and gallery images full width */
+.hero-img img,
+.gallery img,
+.reviews-image img,
+section.buy img {
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* Logo images */
+.logo img,
+.footer-logo img {
+    width: 200px;
+    height: auto;
+    margin: 15px auto;
+}
+
+/* Icon images */
+.why-icons img,
+.service img {
+    width: 30px;
+    height: 30px;
+    margin: 8px auto;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    margin: 5px;
+}
+
+/* ================= BUTTONS & LINKS ================= */
+a {
+    color: #0066CC;
+    text-decoration: underline;
+    text-align: center;
+    display: block;
+    margin: 10px 0;
+}
+
+a.btn1, a.btn2, .offer a, .buy-now a, form button {
+    display: block;
+    width: 90%;
+    max-width: 300px;
+    margin: 15px auto;
+    padding: 12px 20px;
+    background: #D86C2C;
+    color: #FFFFFF;
+    border: 2px solid #B35923;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+a.btn2 {
+    background: #FFFFFF;
+    color: #D86C2C;
+    border: 2px solid #D86C2C;
+}
+
+/* ================= LAYOUT CONTAINERS ================= */
+.flex-row, .flex-column, .row {
+    display: block;
+    width: 100%;
+}
+
+.flex-row > *, .flex-column > *, .row > * {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.hero-content {
+    display: block;
+}
+
+.hero-info, .hero-img {
+    display: block;
+    width: 100%;
+}
+
+/* Why section layout */
+.why .left, .why .right {
+    display: block;
+    width: 100%;
+}
+
+.why-reasons {
+    display: block;
+}
+
+.why-card {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #E0E0E0;
+    text-align: center;
+}
+
+/* What section layout */
+.what-left, .what-right {
+    display: block;
+    width: 100%;
+}
+
+.wow-title {
+    display: block;
+    text-align: center;
+}
+
+/* Reviews section */
+.reviews-left, .reviews-right {
+    display: block;
+    width: 100%;
+}
+
+/* Steps section */
+.steps-box {
+    display: block;
+}
+
+.step {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.step span {
+    display: block;
+    font-size: 48px;
+    color: #D86C2C;
+    margin: 10px 0;
+}
+
+/* Services section */
+.services-info {
+    display: block;
+}
+
+.services-left, .services-right {
+    display: block;
+    width: 100%;
+}
+
+.services-box {
+    display: block;
+}
+
+.service {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #E0E0E0;
+    text-align: center;
+}
+
+/* Contact section */
+.contact-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+form {
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.field {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 5px 0;
+    color: #000000;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #666666;
+    font-size: 16px;
+    background: #FAF9F6;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Buy section */
+.buy-now {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.buy-title {
+    display: block;
+    width: 100%;
+}
+
+/* Footer */
+.footer-info {
+    display: block;
+    width: 100%;
+}
+
+.footer-logo, .socials {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.social-icons {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.copyright {
+    display: block;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.copyright img {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0 5px;
+}
+
+.copyright p {
+    display: inline-block;
+    margin: 0;
+}
+
+/* ================= BASIC MODE BANNER ================= */
+#basic-mode-banner {
+    display: block !important;
+    background: #D86C2C;
+    color: #FFFFFF;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #B35923;
+}
+
+.banner-content {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.banner-info {
+    display: block;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.banner-text {
+    display: block;
+    margin: 5px 0;
+}
+
+.banner-link {
+    color: #2d3748 !important;
+    background: #FFFFFF;
+    padding: 2px 8px;
+    margin: 0 5px;
+    text-decoration: underline;
+    border-radius: 3px;
+}
+
+.banner-actions {
+    display: block;
+    text-align: center;
+    margin: 5px 0;
+}
+
+#close-banner {
+    background: #FFFFFF;
+    color: #D86C2C;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+/* ================= SIMPLE MEDIA QUERIES ================= */
+/* Tablet - 768px and above */
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 17px;
+    }
+    
+    .hero, .why, .what, .reviews, .steps, .services, 
+    .offer, .contact, .buy, .gallery, footer {
+        padding: 25px 15px;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    .why-card, .service {
+        display: inline-block;
+        width: 48%;
+        margin: 1%;
+        vertical-align: top;
+    }
+    
+    .social-icons a {
+        margin: 0 10px;
+    }
+}
+
+/* Desktop - 1024px and above */
+@media screen and (min-width: 1024px) {
+    body {
+        max-width: 1200px;
+    }
+    
+    .hero, .why, .what, .reviews, .steps, .services, 
+    .offer, .contact, .buy, .gallery, footer {
+        padding: 30px 20px;
+    }
+    
+    .why-card, .service {
+        width: 23%;
+        margin: 1%;
+    }
+    
+    .row {
+        display: block;
+    }
+    
+    .row .field {
+        display: inline-block;
+        width: 48%;
+        margin: 1%;
+        vertical-align: top;
+    }
+}
+
+/* ================= FALLBACK FOR VERY OLD BROWSERS ================= */
+/* Basic float layout for old browsers that don't support inline-block */
+.why-card, .service, .row .field {
+    float: none;
+    clear: both;
+}
+
+@media screen and (min-width: 768px) {
+    .why-card, .service {
+        float: left;
+        clear: none;
+    }
+}
+
+/* Clearfix for floated elements */
+.why-reasons:after, .services-box:after, .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ================= NOSCRIPT STYLING ================= */
+.noscript-container {
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border: 2px solid #ff0000;
+    text-align: center;
+}
+
+.noscript-container h1 {
+    color: #ff0000;
+    margin: 10px 0;
+}
+
+.noscript-container img {
+    width: 40px;
+    height: 40px;
+    margin: 10px auto;
+}
