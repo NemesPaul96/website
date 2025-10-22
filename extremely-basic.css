@@ -590,7 +590,9 @@ textarea {
 .social-icons a {
     display: inline;
 }
-
+.social-icons img {
+    display: inline-block;
+}
 }
 
 /* Mobile - 360px and below */
@@ -653,7 +655,9 @@ textarea {
 .social-icons a {
     display: inline;
 }
-
+.social-icons img {
+    display: inline-block;
+}
 }
 
 /* Mobile - 320px and below */
@@ -731,7 +735,9 @@ textarea {
 .social-icons a {
     display: inline;
 }
-
+.social-icons img {
+    display: inline-block;
+}
 }
 
 
