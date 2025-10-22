@@ -596,6 +596,7 @@ textarea {
     .copyright {
     white-space: nowrap;
     margin: 0 auto;
+    width:fit-content;
 }
 .copyright img{
     vertical-align: middle;
@@ -668,6 +669,7 @@ textarea {
     .copyright {
     white-space: nowrap;
     margin: 0 auto;
+    width:fit-content;    
 }
 .copyright img{
     vertical-align: middle;
@@ -755,10 +757,12 @@ textarea {
 .copyright {
     white-space: nowrap;
     margin: 0 auto;
+    width:fit-content;  
 }
 .copyright img{
     vertical-align: middle;
 }
+
 }
 
 
