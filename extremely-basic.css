@@ -23,7 +23,6 @@ main {
 }
 
 /* ================= HIDE COMPLEX ELEMENTS ================= */
-#backToTop,
 .arrow-icon,
 .calendar-icon,
 .hero-img::after,
@@ -453,6 +452,68 @@ textarea {
 
 /* ================= MOBILE MEDIA QUERIES ================= */
 
+/* ================= TABLET & DESKTOP MEDIA QUERIES ================= */
+
+/* Desktop - 1024px and above */
+@media screen and (min-width: 1024px) {
+    body {
+        max-width: 1200px;
+    }
+    
+    .hero, .why, .what, .reviews, .steps, .services, 
+    .offer, .contact, .buy, .gallery, footer {
+        padding: 30px 20px;
+    }
+    
+    .why-card, .service {
+        width: 23%;
+        margin: 1%;
+    }
+    
+    .row {
+        display: block;
+    }
+    
+    .row .field {
+        display: inline-block;
+        width: 48%;
+        margin: 1%;
+        vertical-align: top;
+    }
+}
+
+/* Tablet - 768px and above */
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 17px;
+    }
+    
+    .hero, .why, .what, .reviews, .steps, .services, 
+    .offer, .contact, .buy, .gallery, footer {
+        padding: 25px 15px;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    .why-card, .service {
+        display: inline-block;
+        width: 48%;
+        margin: 1%;
+        vertical-align: top;
+    }
+    
+    .social-icons a {
+        margin: 0 10px;
+    }
+}
+
+
 /* Mobile - 384px and below */
 @media screen and (max-width: 384px) {
     body {
@@ -525,10 +586,6 @@ textarea {
     }
 .why-card .why-icons img {
     display: inline-block;
-    margin-right: 10px; /* spacing between icons */
-    vertical-align: middle;
-    width: 25px;
-    height: 25px;
 }
 .social-icons a {
     display: inline;
@@ -592,10 +649,6 @@ textarea {
     }
 .why-card .why-icons img {
     display: inline-block;
-    margin-right: 10px; /* spacing between icons */
-    vertical-align: middle;
-    width: 25px;
-    height: 25px;
 }
 .social-icons a {
     display: inline;
@@ -674,10 +727,6 @@ textarea {
     }
 .why-card .why-icons img {
     display: inline-block;
-    margin-right: 10px; /* spacing between icons */
-    vertical-align: middle;
-    width: 25px;
-    height: 25px;
 }
 .social-icons a {
     display: inline;
@@ -685,65 +734,7 @@ textarea {
 
 }
 
-/* ================= TABLET & DESKTOP MEDIA QUERIES ================= */
-/* Tablet - 768px and above */
-@media screen and (min-width: 768px) {
-    body {
-        font-size: 17px;
-    }
-    
-    .hero, .why, .what, .reviews, .steps, .services, 
-    .offer, .contact, .buy, .gallery, footer {
-        padding: 25px 15px;
-    }
-    
-    h1 {
-        font-size: 28px;
-    }
-    
-    h2 {
-        font-size: 24px;
-    }
-    
-    .why-card, .service {
-        display: inline-block;
-        width: 48%;
-        margin: 1%;
-        vertical-align: top;
-    }
-    
-    .social-icons a {
-        margin: 0 10px;
-    }
-}
 
-/* Desktop - 1024px and above */
-@media screen and (min-width: 1024px) {
-    body {
-        max-width: 1200px;
-    }
-    
-    .hero, .why, .what, .reviews, .steps, .services, 
-    .offer, .contact, .buy, .gallery, footer {
-        padding: 30px 20px;
-    }
-    
-    .why-card, .service {
-        width: 23%;
-        margin: 1%;
-    }
-    
-    .row {
-        display: block;
-    }
-    
-    .row .field {
-        display: inline-block;
-        width: 48%;
-        margin: 1%;
-        vertical-align: top;
-    }
-}
 
 /* ================= FALLBACK FOR VERY OLD BROWSERS ================= */
 /* Basic float layout for old browsers that don't support inline-block */
