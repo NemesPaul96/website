@@ -435,7 +435,7 @@ textarea {
 }
 
 .banner-actions {
-    display: block;
+    display: none;
     text-align: center;
     margin: 5px 0;
 }
