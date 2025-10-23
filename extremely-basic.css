@@ -641,16 +641,22 @@ span.seven-days {font-size: 35px;}
 .reviews h2{font-size: 22px;}
 .reviews-right p{font-size: 18px;}
 
+/* OFFER Section */      
 .offer-title span{font-size: 20px;}
 .services-right p{font-size: 16px;}
+    
+ /* CONTACT Section */     
 .contact-title span{font-size: 30px;}
 .contact-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}
+form{width: 300px;margin: 0 auto;}
 label{font-size: 14px;}  
 
+ /* BUY Section */      
 .buy-title p{font-size: 14px;}
 .buy-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}   
 .buy-title h2:nth-of-type(1){margin-top: 0;}       
 .buy-title span{font-size: 40px;}    
+    
 /* FOOTER Section */    
 .social-icons a {display: inline;}
 .social-icons img {display: inline-block;}
