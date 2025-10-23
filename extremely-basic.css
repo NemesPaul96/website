@@ -476,7 +476,8 @@ textarea {
 @media screen and (min-width: 800px) {
     
 #backToTop {right: 10px;width: 40px;height: 40px;}
-
+.banner-link {text-decoration: none;}
+    
 /* HERO Section */    
 .logo img {width: 160px;}   
 .hero-info h1{font-size: 24px;margin: 12px 0;}
@@ -557,7 +558,8 @@ label{font-size: 14px;}
 @media screen and (min-width: 768px) {
     
 #backToTop {right: 10px;width: 40px;height: 40px;}
-
+.banner-link {text-decoration: none;}
+    
 /* HERO Section */    
 .logo img {width: 160px;}   
 .hero-info h1{font-size: 24px;margin: 12px 0;}
@@ -637,7 +639,8 @@ label{font-size: 14px;}
 @media screen and (min-width: 480px) {
     
 #backToTop {right: 10px;width: 40px;height: 40px;}
-
+.banner-link {text-decoration: none;}
+    
 /* HERO Section */    
 .logo img {width: 160px;}   
 .hero-info h1{font-size: 24px;margin: 12px 0;}
@@ -718,7 +721,8 @@ label{font-size: 14px;}
 @media screen and (max-width: 384px) {
     
 #backToTop {right: 10px;width: 40px;height: 40px;}
-
+.banner-link {text-decoration: none;}
+    
 /* HERO Section */    
 .logo img {width: 160px;}   
 .hero-info h1{font-size: 24px;margin: 12px 0;}
@@ -797,7 +801,8 @@ label{font-size: 14px;}
 @media screen and (max-width: 360px) {
     
 #backToTop {right: 10px;width: 40px;height: 40px;}
-
+.banner-link {text-decoration: none;}
+    
 /* HERO Section */    
 .logo img {width: 160px;}   
 .hero-info h1{font-size: 24px;margin: 12px 0;}
@@ -877,7 +882,8 @@ label{font-size: 14px;}
 @media screen and (max-width: 320px) {
     
 #backToTop {right: 10px;width: 40px;height: 40px;}
-
+.banner-link {text-decoration: none;}
+    
 /* HERO Section */    
 .logo img {width: 160px;}   
 .hero-info h1{font-size: 24px;margin: 12px 0;}
