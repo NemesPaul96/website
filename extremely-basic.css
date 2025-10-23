@@ -591,25 +591,26 @@ a.btn2 {margin-left: 5px;}
 .wow-title h3:nth-of-type(1){display: inline;font-size: 20px;}    
 .wow-title h3:nth-of-type(2){display: inline;font-size: 20px;}
 .what-right{width: 98%;margin: 0 auto;min-height: 450px;}
-.what-right > .why-card {width:44%; margin: 10px;}
+.what-right > .why-card {width:46%; margin: 10px;height: 200px;}
 .what-right img {width: 35px !important;height: 35px !important;}
     
 /* STEPS Section */      
-.steps h2{font-size: 18px;}
-.step span {font-size: 50px;}
-.step p{font-size: 16px;}
+.steps h2{font-size: 26px;}
+.step span {font-size: 70px;}
+.step p{font-size: 20px;}
 .steps-box {width: 80%;margin: 0 auto;}
     
 /* REVIEWS Section */   
 .reviews h2{font-size: 22px;}
-.reviews-right p{font-size: 18px;margin-bottom: 25px;}
+.reviews-right p{font-size: 24px;margin-bottom: 25px;}
 .reviews img{border-radius: 12px;}
 
     
-/* SERVICES Section */    
-.services h2{font-size: 18px;margin: 11px 0;margin-bottom: 35px;}
-.services-right h3{font-size: 16px;}
-.services-right p{font-size: 16px;}
+/* SERVICES Section */   
+.services {min-height: 900px !important;}
+.services h2{font-size: 20px;margin: 11px 0;margin-bottom: 35px;}
+.services-right h3{font-size: 18px;}
+.services-right p{font-size: 18px;}
 .services-box {width: 80%;margin: 0 auto;}
     
 /* OFFER Section */ 
