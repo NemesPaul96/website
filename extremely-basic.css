@@ -565,11 +565,16 @@ label{font-size: 14px;}
 .hero-info h1{font-size: 24px;margin: 12px 0;}
 .hero-info p{font-size: 16px;}
 span.seven-days {font-size: 35px;}
+a.btn1, a.btn2 {display: inline-block;}
+a.btn1 {margin-right: 5px;}
+a.btn2 {margin-left: 5px;}
     
 /* WHY Section */ 
+.why{min-height: 400px;}
 .why h2{font-size: 18px;margin: 11px 0;}
 .why-description p{font-size: 15px;}    
-.why-reasons {width: 80%;margin: 0 auto;}    
+.why-reasons {width: 96%;margin: 0 auto;}  
+.why .why-card {width: 40%;min-height: 215px;margin: 10px 20px;}
 .why-card, .service {margin: 8px 0;padding: 10px;}
 .why-card .why-icons img {display: inline-block;margin: 0 5px;}
 .why-card:nth-of-type(2) .why-icons img:last-child {width: 50px;height: 50px;}    
