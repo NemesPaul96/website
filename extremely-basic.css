@@ -898,26 +898,28 @@ label{font-size: 14px;}
 span.seven-days {font-size: 35px;}
     
 /* WHY Section */ 
-.why h2{font-size: 18px;margin: 11px 0;}
-.why-description p{font-size: 15px;}    
-.why-reasons {width: 80%;margin: 0 auto;}    
+.why h2 {font-size: 18px;margin: 11px 0;}
+.why-description p {font-size: 15px;}    
+.why-reasons {width: 100%;margin: 0 auto;}    
 .why-card, .service {margin: 8px 0;padding: 10px;}
+.why .why-card {width: 100%;}
 .why-card .why-icons img {display: inline-block;margin: 0 5px;}
 .why-card:nth-of-type(2) .why-icons img:last-child {width: 50px;height: 50px;}    
 
 /* GALLERY Section */     
-.gallery img{border-radius: 12px;}
+.gallery img {border-radius: 12px;}
     
  /* WHAT Section */   
-.what-left-bottom{text-align: center;}
-.what-left-bottom p{font-size: 16px;}
-.what h2{font-size: 18px;}
+.what-left-bottom {text-align: center;}
+.what-left-bottom p {font-size: 14px;}
+.what h2 {font-size: 16px;}
 .wow-title {display: inline;text-align: center;}       
-.wow-title span{margin: 0 5px;}
-.wow-title h3:nth-of-type(1){display: inline;font-size: 20px;}    
-.wow-title h3:nth-of-type(2){display: inline;font-size: 20px;}
-.what-right{width: 80%;margin: 0 auto;}
+.wow-title span {font-size: 30px;margin: 0 5px;}
+.wow-title h3:nth-of-type(1) {display: inline;font-size: 24px;}    
+.wow-title h3:nth-of-type(2) {display: inline-block;font-size: 22px;}
+.what-right {width: 100%;margin: 0 auto;}
 .what-right img {width: 35px !important;height: 35px !important;}
+ .what-right > .why-card {width: 100%;height: 200px;}
     
 /* STEPS Section */      
 .steps h2{font-size: 18px;}
@@ -943,6 +945,7 @@ span.seven-days {font-size: 35px;}
 .offer-title span{font-size: 22px;}
 .offer-title h3:nth-of-type(1){font-size: 18px;margin: 10px 0;}
 .offer-title h3:nth-of-type(1){font-size: 16px;margin: 10px 0;} 
+.offer a{font-size: 14px;}  
     
  /* CONTACT Section */     
 .contact-title span{font-size: 30px;}
@@ -950,11 +953,12 @@ span.seven-days {font-size: 35px;}
 .contact-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}    
 form{width: 300px !important;margin: 0 auto !important;}
 label{font-size: 14px;}  
-
+form button {font-size: 14px;padding: 12px 15px;}
+    
  /* BUY Section */      
 .buy-title p{font-size: 14px;}
 .buy-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}   
-.buy-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}       
+.buy-title h2:nth-of-type(2){font-size: 16px;margin-top: 0;}       
 .buy-title span{font-size: 40px;}    
 .buy img{border-radius: 12px;}
     
