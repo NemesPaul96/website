@@ -730,685 +730,129 @@ a:hover {color: #2c5aa0;text-decoration: underline;}
     
 </div><!-- /container -->
 
+<script src="js/device-check.js"></script>
 <script>
+    // Use the device detection from device-check.js
     document.addEventListener("DOMContentLoaded", function() {
-      // =========================================================================
-      // DEVICE TYPE DETECTION FUNCTION
-      // Determines if the device is mobile, tablet, laptop, or desktop
-      // =========================================================================
-      function getDeviceType() {
-        var ua = navigator.userAgent.toLowerCase();
-        var width = screen.width;
+        // Wait for device-check.js to populate window.env
+        setTimeout(function() {
+            if (window.env) {
+                updateDisplay(window.env);
+            } else {
+                // Fallback if device-check.js didn't run
+                updateDisplayWithBasicInfo();
+            }
+        }, 100);
+    });
 
-        // First check user agent for obvious device types
-        if (/tablet|ipad/i.test(ua)) return 'tablet';
-        if (/mobile|android|iphone/i.test(ua)) return 'mobile';
+    function updateDisplay(envData) {
+        // Update text content with detected information
+        document.getElementById('env-device-name').textContent = envData.deviceModel || 'Unknown Device';
+        document.getElementById('env-device-version').textContent = envData.screenSize + " • " + envData.deviceType;
+        document.getElementById('env-os-name').textContent = formatDisplayName(envData.osType);
+        document.getElementById('env-os-version').textContent = 'v' + envData.osVersion;
+        document.getElementById('env-browser-name').textContent = formatDisplayName(envData.browser);
+        document.getElementById('env-browser-version').textContent = 'v' + envData.browserVersion;
         
-        // Fallback: use screen size for more accurate detection
-        // Mobile: under 768px, Tablet: 768-1024px, Laptop: 1024-1280px, Desktop: 1280px+
-        if (width < 768) return 'mobile';
-        if (width >= 768 && width < 1024) return 'tablet';
-        if (width >= 1024 && width < 1280) return 'laptop';
-        
-        return 'desktop';
-      }
-      
-      // =========================================================================
-      // BROWSER DETECTION FUNCTION  
-      // Identifies which web browser the user is using
-      // =========================================================================
-      function getBrowserName() {
-        var ua = navigator.userAgent.toLowerCase();
-        // Check in order of specificity (most specific first)
-        if (/samsungbrowser/i.test(ua)) return 'samsung';
-        if (/chrome/i.test(ua) && !/edg/i.test(ua)) return 'chrome';
-        if (/firefox/i.test(ua)) return 'firefox';
-        if (/safari/i.test(ua) && !/chrome/i.test(ua)) return 'safari';
-        if (/edg/i.test(ua)) return 'edge';
-        if (/opera|opr/i.test(ua)) return 'opera';
-        if (/trident|msie/i.test(ua)) return 'ie';
-        if (/ucbrowser/i.test(ua)) return 'ucbrowser';
-        if (/brave/i.test(ua)) return 'brave';
-        if (/vivaldi/i.test(ua)) return 'vivaldi';
-        return 'unknown';
-      }
-      
-      // =========================================================================
-      // OPERATING SYSTEM DETECTION FUNCTION
-      // Detects the device's operating system
-      // =========================================================================
-      function getOSName() {
+        // Update icons (use the same logic from your original script)
+        updateIcons(envData.deviceType, envData.osType, envData.browser);
+    }
+
+    function updateDisplayWithBasicInfo() {
+        // Basic fallback if device-check.js fails
         var ua = navigator.userAgent;
-        if (/android/i.test(ua)) return 'android';
-        if (/iphone|ipad|ipod/i.test(ua)) return 'ios';
-        if (/windows/i.test(ua)) return 'windows';
-        if (/mac os/i.test(ua)) return 'macos';
-        if (/linux/i.test(ua)) return 'linux';
-        if (/cros/i.test(ua)) return 'chromeos';
-        if (/Windows Phone/i.test(ua)) return 'windowsphone';
-        return 'unknown';
-      }
-      
-      // =========================================================================
-      // BROWSER VERSION DETECTION FUNCTION
-      // Extracts the version number from the browser's user agent
-      // =========================================================================
-      function getBrowserVersion() {
-        var ua = navigator.userAgent;
-        var version = "Unknown";
+        var deviceType = /mobile/i.test(ua) ? 'mobile' : 'desktop';
+        var os = /android/i.test(ua) ? 'Android' : /ios|iphone|ipad/i.test(ua) ? 'iOS' : 'Unknown';
         
-        // Try multiple browser patterns in one regex
-        var match = ua.match(/(Chrome|Firefox|Safari|Edg|Opera|OPR|SamsungBrowser|UCBrowser|Brave|Vivaldi)\/([0-9.]+)/);
-        
-        if (!match) {
-          // Fallback to individual patterns if combined regex fails
-          match = ua.match(/Chrome\/([0-9.]+)/) || 
-                  ua.match(/Firefox\/([0-9.]+)/) || 
-                  ua.match(/Version\/([0-9.]+).*Safari/) || 
-                  ua.match(/Edg\/([0-9.]+)/) ||
-                  ua.match(/SamsungBrowser\/([0-9.]+)/) ||
-                  ua.match(/UCBrowser\/([0-9.]+)/) ||
-                  ua.match(/Brave\/([0-9.]+)/) ||
-                  ua.match(/Vivaldi\/([0-9.]+)/);
-        }
-        
-        if (match) {
-          version = match[match.length - 1]; // Get the version number
-          var parts = version.split('.');
-          version = parts[0] + (parts[1] ? '.' + parts[1] : ''); // Keep major.minor version
-        }
-        return version;
-      }
-      
-      // =========================================================================
-      // OPERATING SYSTEM VERSION DETECTION FUNCTION
-      // Detects specific versions of each operating system
-      // =========================================================================
-      function getOSVersion() {
-        var ua = navigator.userAgent;
-        var version = "Unknown";
-        
-        // ANDROID VERSION DETECTION
-        var match = ua.match(/Android\s+([0-9.]+)/);
-        if (match) {
-          version = match[1];
-        }
-        // iOS VERSION DETECTION
-        else if (match = ua.match(/OS\s+([0-9_.]+)\s+like/)) {
-          version = match[1].replace(/_/g, '.');
-        }
-        // WINDOWS VERSION DETECTION - Specific versions
-        else if (/Windows NT 10.0/.test(ua)) {
-          version = "10/11";
-        } else if (/Windows NT 6.3/.test(ua)) {
-          version = "8.1";
-        } else if (/Windows NT 6.2/.test(ua)) {
-          version = "8";
-        } else if (/Windows NT 6.1/.test(ua)) {
-          version = "7";
-        } else if (/Windows NT 6.0/.test(ua)) {
-          version = "Vista";
-        } else if (/Windows NT 5.1/.test(ua)) {
-          version = "XP";
-        } else if (/Windows NT 5.0/.test(ua)) {
-          version = "2000";
-        }
-        // macOS VERSION DETECTION with version name mapping
-        else if (match = ua.match(/Mac OS X ([0-9_.]+)/)) {
-          version = match[1].replace(/_/g, '.');
-          // Map version numbers to marketing names
-          var versionMap = {
-            '10.15': 'Catalina',
-            '10.14': 'Mojave', 
-            '10.13': 'High Sierra',
-            '10.12': 'Sierra',
-            '10.11': 'El Capitan',
-            '10.10': 'Yosemite',
-            '10.9': 'Mavericks',
-            '10.8': 'Mountain Lion',
-            '10.7': 'Lion',
-            '10.6': 'Snow Leopard',
-            '10.5': 'Leopard',
-            '11': 'Big Sur',
-            '12': 'Monterey',
-            '13': 'Ventura',
-            '14': 'Sonoma'
-          };
-          if (versionMap[version]) {
-            version = versionMap[version];
-          }
-        }
-        // LINUX DISTRIBUTION DETECTION
-        else if (/Linux/.test(ua)) {
-          version = "Kernel";
-          // Try to extract distribution name
-          var linuxMatch = ua.match(/Linux[^)]*\)([^)]*)\)/);
-          if (linuxMatch && linuxMatch[1]) {
-            var distroInfo = linuxMatch[1];
-            if (distroInfo.includes('Ubuntu')) version = "Ubuntu";
-            else if (distroInfo.includes('Fedora')) version = "Fedora";
-            else if (distroInfo.includes('Debian')) version = "Debian";
-            else if (distroInfo.includes('Mint')) version = "Mint";
-            else if (distroInfo.includes('Arch')) version = "Arch";
-            else if (distroInfo.includes('CentOS')) version = "CentOS";
-            else if (distroInfo.includes('Red Hat')) version = "Red Hat";
-          }
-        }
-        // CHROME OS VERSION DETECTION
-        else if (match = ua.match(/CrOS[^ ]+ ([0-9.]+)/)) {
-          version = match[1];
-        }
-        
-        // Clean up version string to major.minor format
-        if (version !== "Unknown") {
-          var parts = version.split('.');
-          version = parts[0] + (parts[1] ? '.' + parts[1] : '');
-        }
-        
-        return version;
-      }
+        document.getElementById('env-device-name').textContent = 'Unknown Device';
+        document.getElementById('env-device-version').textContent = screen.width + 'x' + screen.height + ' • ' + deviceType;
+        document.getElementById('env-os-name').textContent = os;
+        document.getElementById('env-browser-name').textContent = 'Unknown Browser';
+    }
 
-      // =========================================================================
-      // MODEL NAME CLEANING FUNCTION
-      // Removes unnecessary text from raw model names
-      // =========================================================================
-      function cleanModelName(rawModel) {
-        return rawModel
-          .replace(/Build/g, '')
-          .replace(/; wv/g, '')
-          .replace(/Android/g, '')
-          .replace(/Linux/g, '')
-          .replace(/X11/g, '')
-          .replace(/U;/g, '')
-          .trim();
-      }
-
-      // =========================================================================
-      // FRIENDLY DEVICE NAME MAPPING FUNCTION
-      // Converts technical model numbers to user-friendly names
-      // Example: "SM-G973F" → "Samsung Galaxy S10"
-      // =========================================================================
-      function getFriendlyDeviceName(model) {
-        // Database of model number to friendly name mappings
-        var modelMappings = {
-          // ================= SAMSUNG DEVICES =================
-          'SM-G950F': 'Samsung Galaxy S8',
-          'SM-G950U': 'Samsung Galaxy S8',
-          'SM-G955F': 'Samsung Galaxy S8+',
-          'SM-G960F': 'Samsung Galaxy S9', 
-          'SM-G965F': 'Samsung Galaxy S9+',
-          'SM-G970F': 'Samsung Galaxy S10e',
-          'SM-G973F': 'Samsung Galaxy S10',
-          'SM-G975F': 'Samsung Galaxy S10+',
-          'SM-G980F': 'Samsung Galaxy S20',
-          'SM-G981B': 'Samsung Galaxy S20 5G',
-          'SM-G985F': 'Samsung Galaxy S20+',
-          'SM-G986B': 'Samsung Galaxy S20+ 5G',
-          'SM-G988B': 'Samsung Galaxy S20 Ultra',
-          
-          // Samsung Galaxy Note Series
-          'SM-N950F': 'Samsung Galaxy Note 8',
-          'SM-N960F': 'Samsung Galaxy Note 9',
-          'SM-N970F': 'Samsung Galaxy Note 10',
-          'SM-N975F': 'Samsung Galaxy Note 10+',
-          'SM-N976B': 'Samsung Galaxy Note 10+ 5G',
-          'SM-G965F': 'Samsung Galaxy S9+',
-          'SM-G975F': 'Samsung Galaxy S10+', 
-          'SM-G986B': 'Samsung Galaxy S20+ 5G',
-          'SM-F900F': 'Samsung Galaxy Z Fold',
-          'SM-F711B': 'Samsung Galaxy Z Flip 3',
-          
-          // Samsung Galaxy A Series
-          'SM-A105F': 'Samsung Galaxy A10',
-          'SM-A205F': 'Samsung Galaxy A20',
-          'SM-A305F': 'Samsung Galaxy A30',
-          'SM-A505F': 'Samsung Galaxy A50',
-          'SM-A715F': 'Samsung Galaxy A71',
-          'SM-A515F': 'Samsung Galaxy A51',
-          'SM-A715F': 'Samsung Galaxy A71',
-          
-          // ================= HUAWEI DEVICES =================
-          'SCL-L01': 'Huawei P8 Lite',
-          'SCL-L21': 'Huawei P8 Lite',
-          'ELE-L29': 'Huawei P30',
-          'VOG-L29': 'Huawei P30 Pro',
-          'MAR-L01A': 'Huawei P30 Lite',
-          'LIO-L29': 'Huawei Mate 30 Pro',
-          'YAL-L21': 'Huawei P40 Lite',
-          
-          // ================= GOOGLE PIXEL DEVICES =================
-          'Pixel 3': 'Google Pixel 3',
-          'Pixel 3 XL': 'Google Pixel 3 XL', 
-          'Pixel 4': 'Google Pixel 4',
-          'Pixel 4 XL': 'Google Pixel 4 XL',
-          'Pixel 4a': 'Google Pixel 4a',
-          'Pixel 5': 'Google Pixel 5',
-          
-          // ================= ONEPLUS DEVICES =================
-          'ONEPLUS A3003': 'OnePlus 3T',
-          'ONEPLUS A5000': 'OnePlus 5',
-          'ONEPLUS A6000': 'OnePlus 6',
-          'ONEPLUS A6003': 'OnePlus 6',
-          'ONEPLUS A6010': 'OnePlus 6T',
-          'ONEPLUS A6013': 'OnePlus 6T',
-          'ONEPLUS A7000': 'OnePlus 7',
-          
-          // ================= XIAOMI DEVICES =================
-          'MI 8': 'Xiaomi Mi 8',
-          'MI 9': 'Xiaomi Mi 9',
-          'MI 10': 'Xiaomi Mi 10',
-          'Redmi Note 5': 'Xiaomi Redmi Note 5',
-          'Redmi Note 7': 'Xiaomi Redmi Note 7',
-          'Redmi Note 8': 'Xiaomi Redmi Note 8',
-          'Redmi Note 9': 'Xiaomi Redmi Note 9',
-          
-          // ================= APPLE IPHONES =================
-          'iPhone8,1': 'iPhone 6s',
-          'iPhone8,2': 'iPhone 6s Plus',
-          'iPhone9,1': 'iPhone 7',
-          'iPhone9,3': 'iPhone 7',
-          'iPhone10,1': 'iPhone 8',
-          'iPhone10,4': 'iPhone 8',
-          'iPhone10,2': 'iPhone 8 Plus',
-          'iPhone10,5': 'iPhone 8 Plus',
-          'iPhone11,2': 'iPhone XS',
-          'iPhone11,4': 'iPhone XS Max',
-          'iPhone11,6': 'iPhone XS Max',
-          'iPhone11,8': 'iPhone XR',
-          'iPhone12,1': 'iPhone 11',
-          'iPhone12,3': 'iPhone 11 Pro',
-          'iPhone12,5': 'iPhone 11 Pro Max',
-          'iPhone13,1': 'iPhone 12 mini',
-          'iPhone13,2': 'iPhone 12',
-          'iPhone13,3': 'iPhone 12 Pro',
-          'iPhone13,4': 'iPhone 12 Pro Max',
-          
-          // ================= APPLE IPADS =================
-          'iPad6,11': 'iPad 5th Gen',
-          'iPad7,5': 'iPad 6th Gen',
-          'iPad8,1': 'iPad Pro 11"',
-          'iPad8,5': 'iPad Pro 12.9" 3rd Gen'
-        };
-        
-        // First try exact match
-        if (modelMappings[model]) {
-          return modelMappings[model];
-        }
-        
-        // Then try partial matching for variants
-        for (var key in modelMappings) {
-          if (model.includes(key) || key.includes(model)) {
-            return modelMappings[key];
-          }
-        }
-        
-        return null; // No mapping found
-      }
-
-      // =========================================================================
-      // BRAND-SPECIFIC NAMING FUNCTION
-      // Provides meaningful names when exact mapping isn't available
-      // =========================================================================
-      function getBrandSpecificName(model, osType) {
-        // SAMSUNG DEVICE PATTERN MATCHING
-        if (model.startsWith('SM-')) {
-          var series = '';
-          if (model.includes('SM-G')) series = 'Galaxy S';
-          else if (model.includes('SM-N')) series = 'Galaxy Note'; 
-          else if (model.includes('SM-A')) series = 'Galaxy A';
-          else if (model.includes('SM-M')) series = 'Galaxy M';
-          else if (model.includes('SM-J')) series = 'Galaxy J';
-          else series = 'Galaxy';
-          
-          return 'Samsung ' + series + ' Phone';
-        }
-        
-        // HUAWEI DEVICE PATTERN MATCHING
-        else if (model.includes('HUAWEI') || model.includes('Huawei') || model.includes('HWE')) {
-          if (model.includes('SCL')) return 'Huawei P8 Lite';
-          if (model.includes('ELE')) return 'Huawei P30';
-          if (model.includes('VOG')) return 'Huawei P30 Pro';
-          if (model.includes('MAR')) return 'Huawei P30 Lite';
-          if (model.includes('LIO')) return 'Huawei Mate 30 Pro';
-          if (model.includes('YAL')) return 'Huawei P40 Lite';
-          return 'Huawei Phone';
-        }
-        
-        // XIAOMI DEVICE PATTERN MATCHING
-        else if (model.includes('MI') || model.includes('Redmi') || model.includes('POCO')) {
-          if (model.includes('MI')) return 'Xiaomi Mi Series';
-          if (model.includes('Redmi')) return 'Xiaomi Redmi Series';
-          if (model.includes('POCO')) return 'Xiaomi Poco Series';
-          return 'Xiaomi Phone';
-        }
-        
-        // ONEPLUS DEVICE PATTERN MATCHING
-        else if (model.includes('ONEPLUS') || model.includes('OnePlus')) {
-          return 'OnePlus Phone';
-        }
-        
-        // MOTOROLA DEVICE PATTERN MATCHING
-        else if (model.includes('MOTO') || model.includes('Motorola')) {
-          return 'Motorola Phone';
-        }
-        
-         else if (osType === 'windowsphone' || /Lumia/i.test(model) || model.includes('Lumia')) {
-          return 'Windows Phone';
-        }
-        
-        // APPLE DEVICE DETECTION
-        else if (model.includes('iPhone')) {
-          return 'iPhone';
-        }
-        else if (model.includes('iPad')) {
-          return 'iPad';
-        }
-        else if (model.includes('Mac')) {
-          return 'Mac Computer';
-        }
-        
-        // Generic fallback based on OS type
-        return getFallbackName(osType);
-      }
-
-      // =========================================================================
-      // FALLBACK DEVICE NAME FUNCTION
-      // Provides basic device names when no specific detection is possible
-      // =========================================================================
-      function getFallbackName(osType) {
-        switch(osType) {
-          case 'android': return 'Android Phone';
-          case 'ios': return 'iPhone';
-          case 'windows': return 'Windows PC';
-          case 'macos': return 'Mac Computer';
-          case 'linux': return 'Linux Computer';
-          case 'chromeos': return 'Chromebook';
-          default: return 'Mobile Device';
-        }
-      }
-
-      // =========================================================================
-      // ENHANCED DEVICE MODEL DETECTION FUNCTION
-      // Main function that orchestrates all device name detection
-      // =========================================================================
-      function getDeviceModel() {
-            var ua = navigator.userAgent;
-            var osType = getOSName();
-
-            // =========================================================================
-            // SPECIAL CASES FIRST - Devices with unique user agent patterns
-            // =========================================================================
-
-            // 1. Nest Hub devices
-            if (/Nest Hub/i.test(ua)) {
-                if (/Nest Hub Max/i.test(ua)) return 'Google Nest Hub Max';
-                else return 'Google Nest Hub';
-            }
-
-            // 2. iPad devices - check before general model extraction
-            if (/iPad/i.test(ua)) {
-                if (/iPad Mini/i.test(ua)) return 'iPad Mini';
-                else if (/iPad Air/i.test(ua)) return 'iPad Air';
-                else if (/iPad Pro/i.test(ua)) return 'iPad Pro';
-                else return 'iPad';
-            }
-
-            // 3. Windows Phone detection
-            if (/Windows Phone/i.test(ua) || /Lumia/i.test(ua)) {
-                return 'Windows Phone';
-            }
-
-            // =========================================================================
-            // GENERAL MODEL EXTRACTION AND MAPPING
-            // =========================================================================
-            try {
-                var match = ua.match(/; ([^;)]+)\)/);
-                if (match && match[1]) {
-                    var rawModel = match[1];
-                    var cleanedModel = cleanModelName(rawModel);
-
-                    // Step 1: Try to get friendly name from mapping database
-                    var friendlyName = getFriendlyDeviceName(cleanedModel);
-                    if (friendlyName) {
-                        return friendlyName;
-                    }
-
-                    // Step 2: If no mapping, try brand-specific naming
-                    return getBrandSpecificName(cleanedModel, osType);
-                }
-            } catch (e) {
-                // If anything fails, use OS-based fallback
-                console.log('Device model detection error:', e);
-            }
-
-            // =========================================================================
-            // FINAL FALLBACK
-            // =========================================================================
-            return getFallbackName(osType);
-        }
-      
-      
-      // =========================================================================
-      // DATA COLLECTION SECTION
-      // Runs all detection functions and stores results
-      // =========================================================================
-      var deviceType = getDeviceType();
-      var osType = getOSName();
-      var browserType = getBrowserName();
-      var osVersion = getOSVersion();
-      var browserVersion = getBrowserVersion();
-      var deviceModel = getDeviceModel();
-      var screenResolution = screen.width + 'x' + screen.height;
-      
-      // =========================================================================
-      // DISPLAY NAME FORMATTING FUNCTION
-      // Converts internal names to user-friendly display names
-      // Example: 'edge' → 'Microsoft Edge', 'samsung' → 'Samsung Internet'
-      // =========================================================================
-      function formatDisplayName(name) {
+    function formatDisplayName(name) {
         var nameMap = {
-          // Browser name mappings
-          'chrome': 'Chrome',
-          'firefox': 'Firefox',
-          'safari': 'Safari',
-          'edge': 'Microsoft Edge',
-          'opera': 'Opera',
-          'ie': 'Internet Explorer',
-          'samsung': 'Samsung Internet',
-          'ucbrowser': 'UC Browser',
-          'brave': 'Brave',
-          'vivaldi': 'Vivaldi',
-          'unknown': 'Unknown Browser',
-          
-          // OS name mappings
-          'android': 'Android',
-          'ios': 'iOS',
-          'windows': 'Windows',
-          'macos': 'macOS',
-          'linux': 'Linux',
-          'chromeos': 'Chrome OS'
+            'chrome': 'Chrome', 'firefox': 'Firefox', 'safari': 'Safari',
+            'edge': 'Microsoft Edge', 'opera': 'Opera', 'ie': 'Internet Explorer',
+            'android': 'Android', 'ios': 'iOS', 'windows': 'Windows',
+            'macos': 'macOS', 'linux': 'Linux'
         };
-        
-        return nameMap[name] || name.charAt(0).toUpperCase() + name.slice(1);
-      }
-      
-      // =========================================================================
-      // MAIN DISPLAY UPDATE FUNCTION
-      // Updates all HTML elements with detected information
-      // =========================================================================
-      function updateDisplay() {
-        // Update text content with formatted names
-        document.getElementById('env-device-name').textContent = deviceModel;
-        document.getElementById('env-device-version').textContent = screenResolution + " • " + deviceType;
-        document.getElementById('env-os-name').textContent = formatDisplayName(osType);
-        document.getElementById('env-os-version').textContent = 'v' + osVersion;
-        document.getElementById('env-browser-name').textContent = formatDisplayName(browserType);
-        document.getElementById('env-browser-version').textContent = 'v' + browserVersion;
-        
-        // Get reference to image elements
+        return nameMap[name] || name;
+    }
+
+    function updateIcons(deviceType, osType, browserType) {
         var deviceIcon = document.getElementById('env-device-icon');
         var osIcon = document.getElementById('env-os-icon');
         var browserIcon = document.getElementById('env-browser-icon');
         
-        // =========================================================================
-        // DEVICE ICON ASSIGNMENT
-        // Shows different device images based on device type
-        // =========================================================================
-        if (deviceType === 'mobile') {
-          deviceIcon.src = 'assets/fallbacks/mobile.svg';
-        } else if (deviceType === 'tablet') {
-          deviceIcon.src = 'assets/fallbacks/tablet.svg';
-        } else if (deviceType === 'laptop') {
-          deviceIcon.src = 'assets/fallbacks/laptop.svg';
-        } else if (deviceType === 'desktop') {
-          deviceIcon.src = 'assets/fallbacks/desktop.svg';
-        } else {
-          deviceIcon.src = 'assets/fallbacks/unknown-device.svg';
-        }
+        // Device icon
+        if (deviceType === 'mobile') deviceIcon.src = 'assets/fallbacks/mobile.svg';
+        else if (deviceType === 'tablet') deviceIcon.src = 'assets/fallbacks/tablet.svg';
+        else if (deviceType === 'laptop') deviceIcon.src = 'assets/fallbacks/laptop.svg';
+        else if (deviceType === 'desktop') deviceIcon.src = 'assets/fallbacks/desktop.svg';
+        else deviceIcon.src = 'assets/fallbacks/unknown-device.svg';
 
-        // =========================================================================
-        // OPERATING SYSTEM ICON ASSIGNMENT
-        // Shows OS-specific icons
-        // =========================================================================
-        if (osType === 'android') {
-          osIcon.src = 'assets/fallbacks/android-icon-logo.svg';
-        } else if (osType === 'ios') {
-          osIcon.src = 'assets/fallbacks/apple-mac-os-logo.svg';
-        } else if (osType === 'windows') {
-          osIcon.src = 'assets/fallbacks/windows-logo.svg';
-        } else if (osType === 'macos') {
-          osIcon.src = 'assets/fallbacks/apple-mac-os-logo.svg';
-        } else if (osType === 'linux') {
-          osIcon.src = 'assets/fallbacks/Linux.svg';
-        } else if (osType === 'chromeos') {
-          osIcon.src = 'assets/fallbacks/chromeos-logo.svg';
-        } else {
-          osIcon.src = 'assets/fallbacks/os-unknown.webp';
-        }
+        // OS icon
+        if (osType === 'android') osIcon.src = 'assets/fallbacks/android-icon-logo.svg';
+        else if (osType === 'ios') osIcon.src = 'assets/fallbacks/apple-mac-os-logo.svg';
+        else if (osType === 'windows') osIcon.src = 'assets/fallbacks/windows-logo.svg';
+        else if (osType === 'macos') osIcon.src = 'assets/fallbacks/apple-mac-os-logo.svg';
+        else if (osType === 'linux') osIcon.src = 'assets/fallbacks/Linux.svg';
+        else osIcon.src = 'assets/fallbacks/os-unknown.webp';
         
-        // =========================================================================
-        // BROWSER ICON ASSIGNMENT
-        // Shows browser-specific icons
-        // =========================================================================
-        if (browserType === 'chrome') {
-          browserIcon.src = 'assets/fallbacks/Chrome.svg';
-        } else if (browserType === 'firefox') {
-          browserIcon.src = 'assets/fallbacks/firefox-icon-logo.svg';
-        } else if (browserType === 'safari') {
-          browserIcon.src = 'assets/fallbacks/Apple-Safari.svg';
-        } else if (browserType === 'edge') {
-          browserIcon.src = 'assets/fallbacks/edge.svg';
-        } else if (browserType === 'opera') {
-          browserIcon.src = 'assets/fallbacks/opera-logo.svg';
-        } else if (browserType === 'ie') {
-          browserIcon.src = 'assets/fallbacks/internet-explorer.svg';
-        } else if (browserType === 'samsung') {
-          browserIcon.src = 'assets/fallbacks/samsung-internet.svg';
-        } else if (browserType === 'ucbrowser') {
-          browserIcon.src = 'assets/fallbacks/uc-browser.svg';
-        } else if (browserType === 'brave') {
-          browserIcon.src = 'assets/fallbacks/brave-logo.svg';
-        } else if (browserType === 'vivaldi') {
-          browserIcon.src = 'assets/fallbacks/vivaldi-logo.svg';
-        } else {
-          browserIcon.src = 'assets/fallbacks/browsers.png';
-        }
+        // Browser icon
+        if (browserType === 'chrome') browserIcon.src = 'assets/fallbacks/Chrome.svg';
+        else if (browserType === 'firefox') browserIcon.src = 'assets/fallbacks/firefox-icon-logo.svg';
+        else if (browserType === 'safari') browserIcon.src = 'assets/fallbacks/Apple-Safari.svg';
+        else if (browserType === 'edge') browserIcon.src = 'assets/fallbacks/edge.svg';
+        else if (browserType === 'opera') browserIcon.src = 'assets/fallbacks/opera-logo.svg';
+        else if (browserType === 'ie') browserIcon.src = 'assets/fallbacks/internet-explorer.svg';
+        else browserIcon.src = 'assets/fallbacks/browsers.png';
         
-        // Set accessibility text for images
-        deviceIcon.alt = deviceType + ' device';
-        osIcon.alt = osType + ' OS';
-        browserIcon.alt = browserType + ' browser';
-        
-        // =========================================================================
-        // IMAGE ERROR HANDLING
-        // Fallback if any images fail to load
-        // =========================================================================
-        deviceIcon.onerror = function() {
-          this.src = 'assets/fallbacks/unknown-device.svg';
-        };
-        osIcon.onerror = function() {
-          this.src = 'assets/fallbacks/os-unknown.webp';
-        };
-        browserIcon.onerror = function() {
-          this.src = 'assets/fallbacks/browsers.png';
-        };
-      }
-      
-      // =========================================================================
-      // INITIALIZE THE DISPLAY
-      // Run the main function to update the page
-      // =========================================================================
-      updateDisplay();
-   
-    });
-  
-    // =========================================================================
-    // NAVIGATION FUNCTIONS
-    // =========================================================================
-      function goBackToWebsite() {
-        try {
-          window.location.href = 'index.html';
-        } catch (error) {
-          console.log('Navigation error:', error);
-          // Fallback for very old browsers
-          window.location = 'index.html';
-        }
-      }
-
-      function goToBasicMode() {
-        try {
-          // Clear any existing timeouts that might redirect
-          if (window.fallbackTimeout) {
-            clearTimeout(window.fallbackTimeout);
-          }
-
-          // Set session storage to force basic mode
-          if (typeof sessionStorage !== 'undefined') {
-            sessionStorage.setItem('forceBasicMode', 'true');
-          }
-
-          // Add timestamp to prevent caching
-          var basicModeUrl = 'index.html?basic=true&timestamp=' + Date.now();
-
-          console.log('🔀 Redirecting to basic mode:', basicModeUrl);
-
-          // Force redirect immediately
-          window.location.href = basicModeUrl;
-
-        } catch (error) {
-          console.log('Navigation error:', error);
-          // Ultimate fallback
-          window.location = 'index.html';
-        }
-      }
-  
-      function goToExtremelyBasicMode() {
-      try {
-        // Clear any existing timeouts
-        if (window.fallbackTimeout) {
-          clearTimeout(window.fallbackTimeout);
-        }
-
-        // Set session storage for extremely basic mode
-        if (typeof sessionStorage !== 'undefined') {
-          sessionStorage.setItem('forceExtremelyBasicMode', 'true');
-        }
-
-        // Add timestamp to prevent caching
-          var extremelyBasicUrl = 'index.html?extremelyBasic=true&timestamp=' + Date.now();
-
-        console.log('🔀 Redirecting to extremely basic mode:', extremelyBasicUrl);
-
-        // Force redirect immediately
-        window.location.href = extremelyBasicUrl;
-
-      } catch (error) {
-        console.log('Navigation error:', error);
-        // Ultimate fallback
-        window.location = 'index.html';
-      }
+        // Error handling for images
+        [deviceIcon, osIcon, browserIcon].forEach(function(img) {
+            img.onerror = function() {
+                if (img.id === 'env-device-icon') this.src = 'assets/fallbacks/unknown-device.svg';
+                else if (img.id === 'env-os-icon') this.src = 'assets/fallbacks/os-unknown.webp';
+                else this.src = 'assets/fallbacks/browsers.png';
+            };
+        });
     }
-  
+
+    // Keep your existing navigation functions
+    function goBackToWebsite() {
+        try {
+            window.location.href = 'index.html';
+        } catch (error) {
+            window.location = 'index.html';
+        }
+    }
+
+    function goToBasicMode() {
+        try {
+            if (window.fallbackTimeout) clearTimeout(window.fallbackTimeout);
+            if (typeof sessionStorage !== 'undefined') {
+                sessionStorage.setItem('forceBasicMode', 'true');
+            }
+            var basicModeUrl = 'index.html?basic=true&timestamp=' + Date.now();
+            window.location.href = basicModeUrl;
+        } catch (error) {
+            window.location = 'index.html';
+        }
+    }
+
+    function goToExtremelyBasicMode() {
+        try {
+            if (window.fallbackTimeout) clearTimeout(window.fallbackTimeout);
+            if (typeof sessionStorage !== 'undefined') {
+                sessionStorage.setItem('forceExtremelyBasicMode', 'true');
+            }
+            var extremelyBasicUrl = 'index.html?extremelyBasic=true&timestamp=' + Date.now();
+            window.location.href = extremelyBasicUrl;
+        } catch (error) {
+            window.location = 'index.html';
+        }
+    }
 </script>
     
   <script src="https://static.app/js/static.js" type="text/javascript"></script>
