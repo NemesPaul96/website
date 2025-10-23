@@ -1,5 +1,5 @@
-// BASIC MODE SCRIPT - FIXED VERSION
-// BASIC MODE SCRIPT - FIXED VERSION
+// BASIC MODE SCRIPT 
+
 (function() {
     // Check if extremely basic mode is active FIRST
     var isExtremelyBasicMode = window.location.search.includes('extremelyBasic=true') || 
