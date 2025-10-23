@@ -623,11 +623,13 @@ span.seven-days {font-size: 35px;}
 .why-card, .service {margin: 8px 0;padding: 10px;}
 .why-card .why-icons img {display: inline-block;margin: 0 5px;}
 .why-card:nth-of-type(2) .why-icons img:last-child {width: 50px;height: 50px;}    
-
+.why-description p{font-size: 15px;}
+    
  /* WHAT Section */   
 .what-left-bottom{text-align: center;}
 .what-left-bottom p{font-size: 16px;}
 .wow-title {display: inline;text-align: center;}   
+.wow-title span{margin: 0 5px;}
 .wow-title h3:nth-of-type(1){display: inline;font-size: 20px;}    
 .wow-title h3:nth-of-type(2){display: inline;font-size: 20px;}
 
@@ -636,11 +638,19 @@ span.seven-days {font-size: 35px;}
 .step span {font-size: 50px;}
 
 /* REVIEWS Section */   
+.reviews h2{font-size: 22px;}
 .reviews-right p{font-size: 18px;}
 
-    
+.offer-title span{font-size: 20px;}
 .services-right p{font-size: 16px;}
-    
+.contact-title span{font-size: 30px;}
+.contact-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}
+label{font-size: 14px;}  
+
+.buy-title p{font-size: 14px;}
+.buy-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}   
+.buy-title h2:nth-of-type(1){margin-top: 0;}       
+.buy-title span{font-size: 40px;}    
 /* FOOTER Section */    
 .social-icons a {display: inline;}
 .social-icons img {display: inline-block;}
