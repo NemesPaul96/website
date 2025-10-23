@@ -1,6 +1,14 @@
 /* EXTREMELY BASIC CSS - COMPATIBLE WITH 2000+ DEVICES AND BROWSERS */
 
-/* ================= RESET & BASIC STYLES ================= */
+/*=============== FONTS =====================*/
+/*==========================================*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/*================= DEFAULT =====================*/
+/*==============================================*/
 * {
     margin: 0;
     padding: 0;
@@ -22,22 +30,6 @@ main {
     margin: 0 auto;
 }
 
-/* ================= HIDE COMPLEX ELEMENTS ================= */
-.arrow-icon,
-.calendar-icon,
-.hero-img::after,
-section.buy::after {
-    display: none !important;
-}
-
-/* Remove all pseudo-elements */
-::before,
-::after {
-    display: none !important;
-    content: none !important;
-}
-
-/* ================= BASIC LAYOUT ================= */
 .hero, .why, .what, .reviews, .steps, .services, 
 .offer, .contact, .buy, .gallery, footer {
     display: block;
@@ -52,8 +44,38 @@ section.buy::after {
     min-height: auto !important;
 }
 
+/*=============== BACK TO TOP BUTTON =====================*/
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(95.47deg, #D86C2C -0.22%, #F3A46B 99.99%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    font-size: 1.5rem;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    overflow: hidden;
+}
+/* ================= HIDE COMPLEX ELEMENTS ================= */
+.arrow-icon, .calendar-icon, .hero-img::after, section.buy::after {
+    display: none !important;
+}
+
+/* Remove all pseudo-elements */
+::before, ::after {
+    display: none !important;
+    content: none !important;
+}
+
 /* ================= TYPOGRAPHY ================= */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
     text-align: center;
     margin: 15px 0;
     font-weight: bold;
@@ -83,16 +105,13 @@ p {
 }
 
 /* ================= SPECIAL TEXT ELEMENTS ================= */
-span.seven-days,
-span.wow,
-span.first-dance,
-.contact-title span,
-.offer-title h3 span {
+span.seven-days, span.wow, span.first-dance, .contact-title span, .offer-title h3 span {
     color: #D86C2C !important;
     background: none !important;
     -webkit-text-fill-color: #D86C2C !important;
     font-weight: bold;
     display: inline;
+    font-size:20px;
 }
 
 span.seven-days {
@@ -117,26 +136,20 @@ img {
     border: none;
 }
 
-/* Hero and gallery images full width */
-.hero-img img,
-.gallery img,
-.reviews-image img,
-section.buy img {
+.hero-img img, .gallery img, .reviews-image img, section.buy img {
     width: 100%;
     margin: 10px 0;
 }
 
 /* Logo images */
-.logo img,
-.footer-logo img {
+.logo img, .footer-logo img {
     width: 200px;
     height: auto;
     margin: 15px auto;
 }
 
 /* Icon images */
-.why-icons img,
-.service img {
+.why-icons img, .service img {
     width: 30px;
     height: 30px;
     margin: 8px auto;
