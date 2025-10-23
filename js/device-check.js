@@ -1,15 +1,8 @@
 /*
-Logs full environment info in the console for every visitor
-Shows fallback message if IntersectionObserver is missing
-Injects device, OS, browser and version into the fallback message
+ENHANCED DEVICE DATA COLLECTOR WITH GOOGLE SHEETS INTEGRATION
 */
 
-
-//* 
-UNIVERSAL DEVICE DATA COLLECTOR - ES5 Compatible
-Runs on ALL devices to collect environment data for analytics and fallback
-*/
-
+// Your existing detection function
 function detectEnv() {
   var ua = navigator.userAgent;
   var platform = navigator.platform || "Unknown";
@@ -117,40 +110,95 @@ function detectEnv() {
   };
 }
 
-// Initialize environment data immediately
-window.env = detectEnv();
-
-// Log for analytics and debugging
-console.log("📊 Device Environment Data:", window.env);
-
-// Send to analytics (future implementation)
-function sendToAnalytics(envData) {
-  // This can be extended to send data to your analytics service
-  console.log("📈 Analytics Data:", envData);
+// Enhanced device detection with Google Sheets integration
+function enhancedDeviceDetection() {
+  var envData = detectEnv();
+  var startTime = Date.now();
   
-  // Example: Send to Google Analytics
-  // if (typeof gtag !== 'undefined') {
-  //   gtag('event', 'device_info', envData);
-  // }
+  // Add enhanced device info (using functions from your fallback page)
+  envData.deviceModel = getDeviceModel();
+  envData.deviceType = getDeviceType();
+  envData.screenSize = screen.width + 'x' + screen.height;
+  envData.timeOnSite = 0;
+  envData.pageUrl = window.location.href;
   
-  // Example: Send to your backend
-  // fetch('/api/analytics/device-info', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify(envData)
-  // });
+  // Send initial data after 3 seconds (for quick visits)
+  setTimeout(function() {
+    envData.timeOnSite = Math.round((Date.now() - startTime) / 1000);
+    sendToGoogleSheets(envData);
+  }, 3000);
+  
+  // Send final data when user leaves
+  window.addEventListener('beforeunload', function() {
+    var timeSpent = Math.round((Date.now() - startTime) / 1000);
+    envData.timeOnSite = timeSpent;
+    
+    // Use synchronous request for beforeunload
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://script.google.com/macros/s/AKfycbzoP7yrucCzytbobaJxwCQk33WGBSor4KYEr1GHltdGobF__N7yxB21mU6Urp1XB0_C/exec', false);
+    xhr.send(JSON.stringify(envData));
+  });
+  
+  return envData;
 }
 
-// Send analytics data
-sendToAnalytics(window.env);
+// Simplified device model detection (add more from your fallback page as needed)
+function getDeviceModel() {
+  var ua = navigator.userAgent;
+  
+  // Simple device detection - expand this with your fallback page logic
+  if (/iPhone/i.test(ua)) return 'iPhone';
+  if (/iPad/i.test(ua)) return 'iPad';
+  if (/Android/i.test(ua)) return 'Android Phone';
+  if (/Windows Phone/i.test(ua)) return 'Windows Phone';
+  if (/Macintosh/i.test(ua)) return 'Mac';
+  if (/Windows/i.test(ua)) return 'Windows PC';
+  if (/Linux/i.test(ua)) return 'Linux PC';
+  
+  return 'Unknown Device';
+}
 
-// Update visual display if on main page
-document.addEventListener("DOMContentLoaded", function () {
-  var envDeviceElement = document.getElementById("env-device");
-  if (envDeviceElement) {
-    document.getElementById("env-device").textContent = window.env.device;
-    document.getElementById("env-os").textContent = window.env.os + (window.env.osVersion !== "Unknown" ? " " + window.env.osVersion : "");
-    document.getElementById("env-browser").textContent = window.env.browser;
-    document.getElementById("env-version").textContent = window.env.version;
-  }
+function getDeviceType() {
+  var ua = navigator.userAgent.toLowerCase();
+  var width = screen.width;
+
+  if (/mobile/i.test(ua)) return 'mobile';
+  if (/tablet|ipad/i.test(ua)) return 'tablet';
+  if (width < 768) return 'mobile';
+  if (width >= 768 && width < 1024) return 'tablet';
+  if (width >= 1024 && width < 1280) return 'laptop';
+  return 'desktop';
+}
+
+// Send data to Google Sheets
+function sendToGoogleSheets(data) {
+  // Prevent duplicate sends
+  if (window.dataSent) return;
+  window.dataSent = true;
+  
+  // Use your Google Apps Script URL
+  var webAppUrl = 'https://script.google.com/macros/s/AKfycbzoP7yrucCzytbobaJxwCQk33WGBSor4KYEr1GHltdGobF__N7yxB21mU6Urp1XB0_C/exec';
+  
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', webAppUrl, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        console.log('📊 Data sent to Google Sheets successfully');
+      } else {
+        console.log('❌ Failed to send data to Google Sheets');
+      }
+    }
+  };
+  
+  xhr.send(JSON.stringify(data));
+}
+
+// Initialize when page loads
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("📊 Starting device analytics...");
+  window.env = enhancedDeviceDetection();
+  console.log("📊 Device Environment Data:", window.env);
 });
