@@ -620,6 +620,8 @@ textarea {
 /* Mobile - 360px and below */
 @media screen and (max-width: 360px) {
     
+#backToTop {right: 10px;width: 40px;height: 40px;}
+
 /* HERO Section */    
 .logo img {width: 160px;}   
 .hero-info h1{font-size: 24px;margin: 12px 0;}
@@ -646,7 +648,7 @@ span.seven-days {font-size: 35px;}
 .wow-title h3:nth-of-type(1){display: inline;font-size: 20px;}    
 .wow-title h3:nth-of-type(2){display: inline;font-size: 20px;}
 .what-right{width: 80%;margin: 0 auto;}
-.what-right img {width: 30px;height: 30px;}
+.what-right img {width: 35px !important;height: 35px !important;}
     
 /* STEPS Section */      
 .steps h2{font-size: 18px;}
@@ -656,9 +658,10 @@ span.seven-days {font-size: 35px;}
     
 /* REVIEWS Section */   
 .reviews h2{font-size: 22px;}
-.reviews-right p{font-size: 18px;}
+.reviews-right p{font-size: 18px;margin-bottom: 25px;}
 .reviews img{border-radius: 12px;}
 
+    
 /* SERVICES Section */    
 .services h2{font-size: 18px;margin: 11px 0;margin-bottom: 35px;}
 .services-right h3{font-size: 16px;}
@@ -675,6 +678,7 @@ span.seven-days {font-size: 35px;}
  /* CONTACT Section */     
 .contact-title span{font-size: 30px;}
 .contact-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}
+.contact-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}    
 form{width: 300px !important;margin: 0 auto !important;}
 label{font-size: 14px;}  
 
