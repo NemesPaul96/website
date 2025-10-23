@@ -465,156 +465,332 @@ textarea {
 
 /* ================= MOBILE MEDIA QUERIES ================= */
 
-/* ================= TABLET & DESKTOP MEDIA QUERIES ================= */
 
 /* Desktop - 1024px and above */
 @media screen and (min-width: 1024px) {
-    body {
-        max-width: 1200px;
-    }
-    
-    .hero, .why, .what, .reviews, .steps, .services, 
-    .offer, .contact, .buy, .gallery, footer {
-        padding: 30px 20px;
-    }
-    
-    .why-card, .service {
-        width: 23%;
-        margin: 1%;
-    }
-    
-    .row {
-        display: block;
-    }
-    
-    .row .field {
-        display: inline-block;
-        width: 48%;
-        margin: 1%;
-        vertical-align: top;
-    }
+
 }
+
+
+/* Tablet - 800px and above */
+@media screen and (min-width: 800px) {
+    
+#backToTop {right: 10px;width: 40px;height: 40px;}
+
+/* HERO Section */    
+.logo img {width: 160px;}   
+.hero-info h1{font-size: 24px;margin: 12px 0;}
+.hero-info p{font-size: 16px;}
+span.seven-days {font-size: 35px;}
+    
+/* WHY Section */ 
+.why h2{font-size: 18px;margin: 11px 0;}
+.why-description p{font-size: 15px;}    
+.why-reasons {width: 80%;margin: 0 auto;}    
+.why-card, .service {margin: 8px 0;padding: 10px;}
+.why-card .why-icons img {display: inline-block;margin: 0 5px;}
+.why-card:nth-of-type(2) .why-icons img:last-child {width: 50px;height: 50px;}    
+
+/* GALLERY Section */     
+.gallery img{border-radius: 12px;}
+    
+ /* WHAT Section */   
+.what-left-bottom{text-align: center;}
+.what-left-bottom p{font-size: 16px;}
+.what h2{font-size: 18px;}
+.wow-title {display: inline;text-align: center;}       
+.wow-title span{margin: 0 5px;}
+.wow-title h3:nth-of-type(1){display: inline;font-size: 20px;}    
+.wow-title h3:nth-of-type(2){display: inline;font-size: 20px;}
+.what-right{width: 80%;margin: 0 auto;}
+.what-right img {width: 35px !important;height: 35px !important;}
+    
+/* STEPS Section */      
+.steps h2{font-size: 18px;}
+.step span {font-size: 50px;}
+.step p{font-size: 16px;}
+.steps-box {width: 80%;margin: 0 auto;}
+    
+/* REVIEWS Section */   
+.reviews h2{font-size: 22px;}
+.reviews-right p{font-size: 18px;margin-bottom: 25px;}
+.reviews img{border-radius: 12px;}
+
+    
+/* SERVICES Section */    
+.services h2{font-size: 18px;margin: 11px 0;margin-bottom: 35px;}
+.services-right h3{font-size: 16px;}
+.services-right p{font-size: 16px;}
+.services-box {width: 80%;margin: 0 auto;}
+    
+/* OFFER Section */ 
+.offer{width:90%;}
+.offer h2{font-size: 26px;}
+.offer-title span{font-size: 22px;}
+.offer-title h3:nth-of-type(1){font-size: 18px;margin: 10px 0;}
+.offer-title h3:nth-of-type(1){font-size: 16px;margin: 10px 0;} 
+    
+ /* CONTACT Section */     
+.contact-title span{font-size: 30px;}
+.contact-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}
+.contact-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}    
+form{width: 300px !important;margin: 0 auto !important;}
+label{font-size: 14px;}  
+
+ /* BUY Section */      
+.buy-title p{font-size: 14px;}
+.buy-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}   
+.buy-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}       
+.buy-title span{font-size: 40px;}    
+.buy img{border-radius: 12px;}
+    
+/* FOOTER Section */    
+.social-icons a {display: inline;}
+.social-icons img {display: inline-block;}
+.copyright {white-space: nowrap;margin: 0 auto;width:fit-content;vertical-align: middle;    }
+.copyright img{vertical-align: middle;}
+    
+}
+
 
 /* Tablet - 768px and above */
 @media screen and (min-width: 768px) {
-    body {
-        font-size: 17px;
-    }
     
-    .hero, .why, .what, .reviews, .steps, .services, 
-    .offer, .contact, .buy, .gallery, footer {
-        padding: 25px 15px;
-    }
+#backToTop {right: 10px;width: 40px;height: 40px;}
+
+/* HERO Section */    
+.logo img {width: 160px;}   
+.hero-info h1{font-size: 24px;margin: 12px 0;}
+.hero-info p{font-size: 16px;}
+span.seven-days {font-size: 35px;}
     
-    h1 {
-        font-size: 28px;
-    }
+/* WHY Section */ 
+.why h2{font-size: 18px;margin: 11px 0;}
+.why-description p{font-size: 15px;}    
+.why-reasons {width: 80%;margin: 0 auto;}    
+.why-card, .service {margin: 8px 0;padding: 10px;}
+.why-card .why-icons img {display: inline-block;margin: 0 5px;}
+.why-card:nth-of-type(2) .why-icons img:last-child {width: 50px;height: 50px;}    
+
+/* GALLERY Section */     
+.gallery img{border-radius: 12px;}
     
-    h2 {
-        font-size: 24px;
-    }
+ /* WHAT Section */   
+.what-left-bottom{text-align: center;}
+.what-left-bottom p{font-size: 16px;}
+.what h2{font-size: 18px;}
+.wow-title {display: inline;text-align: center;}       
+.wow-title span{margin: 0 5px;}
+.wow-title h3:nth-of-type(1){display: inline;font-size: 20px;}    
+.wow-title h3:nth-of-type(2){display: inline;font-size: 20px;}
+.what-right{width: 80%;margin: 0 auto;}
+.what-right img {width: 35px !important;height: 35px !important;}
     
-    .why-card, .service {
-        display: inline-block;
-        width: 48%;
-        margin: 1%;
-        vertical-align: top;
-    }
+/* STEPS Section */      
+.steps h2{font-size: 18px;}
+.step span {font-size: 50px;}
+.step p{font-size: 16px;}
+.steps-box {width: 80%;margin: 0 auto;}
     
-    .social-icons a {
-        margin: 0 10px;
-    }
+/* REVIEWS Section */   
+.reviews h2{font-size: 22px;}
+.reviews-right p{font-size: 18px;margin-bottom: 25px;}
+.reviews img{border-radius: 12px;}
+
+    
+/* SERVICES Section */    
+.services h2{font-size: 18px;margin: 11px 0;margin-bottom: 35px;}
+.services-right h3{font-size: 16px;}
+.services-right p{font-size: 16px;}
+.services-box {width: 80%;margin: 0 auto;}
+    
+/* OFFER Section */ 
+.offer{width:90%;}
+.offer h2{font-size: 26px;}
+.offer-title span{font-size: 22px;}
+.offer-title h3:nth-of-type(1){font-size: 18px;margin: 10px 0;}
+.offer-title h3:nth-of-type(1){font-size: 16px;margin: 10px 0;} 
+    
+ /* CONTACT Section */     
+.contact-title span{font-size: 30px;}
+.contact-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}
+.contact-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}    
+form{width: 300px !important;margin: 0 auto !important;}
+label{font-size: 14px;}  
+
+ /* BUY Section */      
+.buy-title p{font-size: 14px;}
+.buy-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}   
+.buy-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}       
+.buy-title span{font-size: 40px;}    
+.buy img{border-radius: 12px;}
+    
+/* FOOTER Section */    
+.social-icons a {display: inline;}
+.social-icons img {display: inline-block;}
+.copyright {white-space: nowrap;margin: 0 auto;width:fit-content;vertical-align: middle;    }
+.copyright img{vertical-align: middle;}
+    
+}
+
+/* Tablet - 480px and above */
+@media screen and (min-width: 480px) {
+    
+#backToTop {right: 10px;width: 40px;height: 40px;}
+
+/* HERO Section */    
+.logo img {width: 160px;}   
+.hero-info h1{font-size: 24px;margin: 12px 0;}
+.hero-info p{font-size: 16px;}
+span.seven-days {font-size: 35px;}
+    
+/* WHY Section */ 
+.why h2{font-size: 18px;margin: 11px 0;}
+.why-description p{font-size: 15px;}    
+.why-reasons {width: 80%;margin: 0 auto;}    
+.why-card, .service {margin: 8px 0;padding: 10px;}
+.why-card .why-icons img {display: inline-block;margin: 0 5px;}
+.why-card:nth-of-type(2) .why-icons img:last-child {width: 50px;height: 50px;}    
+
+/* GALLERY Section */     
+.gallery img{border-radius: 12px;}
+    
+ /* WHAT Section */   
+.what-left-bottom{text-align: center;}
+.what-left-bottom p{font-size: 16px;}
+.what h2{font-size: 18px;}
+.wow-title {display: inline;text-align: center;}       
+.wow-title span{margin: 0 5px;}
+.wow-title h3:nth-of-type(1){display: inline;font-size: 20px;}    
+.wow-title h3:nth-of-type(2){display: inline;font-size: 20px;}
+.what-right{width: 80%;margin: 0 auto;}
+.what-right img {width: 35px !important;height: 35px !important;}
+    
+/* STEPS Section */      
+.steps h2{font-size: 18px;}
+.step span {font-size: 50px;}
+.step p{font-size: 16px;}
+.steps-box {width: 80%;margin: 0 auto;}
+    
+/* REVIEWS Section */   
+.reviews h2{font-size: 22px;}
+.reviews-right p{font-size: 18px;margin-bottom: 25px;}
+.reviews img{border-radius: 12px;}
+
+    
+/* SERVICES Section */    
+.services h2{font-size: 18px;margin: 11px 0;margin-bottom: 35px;}
+.services-right h3{font-size: 16px;}
+.services-right p{font-size: 16px;}
+.services-box {width: 80%;margin: 0 auto;}
+    
+/* OFFER Section */ 
+.offer{width:90%;}
+.offer h2{font-size: 26px;}
+.offer-title span{font-size: 22px;}
+.offer-title h3:nth-of-type(1){font-size: 18px;margin: 10px 0;}
+.offer-title h3:nth-of-type(1){font-size: 16px;margin: 10px 0;} 
+    
+ /* CONTACT Section */     
+.contact-title span{font-size: 30px;}
+.contact-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}
+.contact-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}    
+form{width: 300px !important;margin: 0 auto !important;}
+label{font-size: 14px;}  
+
+ /* BUY Section */      
+.buy-title p{font-size: 14px;}
+.buy-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}   
+.buy-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}       
+.buy-title span{font-size: 40px;}    
+.buy img{border-radius: 12px;}
+    
+/* FOOTER Section */    
+.social-icons a {display: inline;}
+.social-icons img {display: inline-block;}
+.copyright {white-space: nowrap;margin: 0 auto;width:fit-content;vertical-align: middle;    }
+.copyright img{vertical-align: middle;}
+    
 }
 
 
 /* Mobile - 384px and below */
 @media screen and (max-width: 384px) {
-    body {
-        font-size: 14px;
-    }
     
-    .hero, .why, .what, .reviews, .steps, .services, 
-    .offer, .contact, .buy, .gallery, footer {
-        padding: 15px 8px;
-        margin-bottom: 15px;
-    }
+#backToTop {right: 10px;width: 40px;height: 40px;}
+
+/* HERO Section */    
+.logo img {width: 160px;}   
+.hero-info h1{font-size: 24px;margin: 12px 0;}
+.hero-info p{font-size: 16px;}
+span.seven-days {font-size: 35px;}
     
-    h1 {
-        font-size: 20px;
-        margin: 15px 0;
-    }
+/* WHY Section */ 
+.why h2{font-size: 18px;margin: 11px 0;}
+.why-description p{font-size: 15px;}    
+.why-reasons {width: 80%;margin: 0 auto;}    
+.why-card, .service {margin: 8px 0;padding: 10px;}
+.why-card .why-icons img {display: inline-block;margin: 0 5px;}
+.why-card:nth-of-type(2) .why-icons img:last-child {width: 50px;height: 50px;}    
+
+/* GALLERY Section */     
+.gallery img{border-radius: 12px;}
     
-    h2 {
-        font-size: 18px;
-        margin: 13px 0;
-    }
+ /* WHAT Section */   
+.what-left-bottom{text-align: center;}
+.what-left-bottom p{font-size: 16px;}
+.what h2{font-size: 18px;}
+.wow-title {display: inline;text-align: center;}       
+.wow-title span{margin: 0 5px;}
+.wow-title h3:nth-of-type(1){display: inline;font-size: 20px;}    
+.wow-title h3:nth-of-type(2){display: inline;font-size: 20px;}
+.what-right{width: 80%;margin: 0 auto;}
+.what-right img {width: 35px !important;height: 35px !important;}
     
-    h3 {
-        font-size: 16px;
-        margin: 11px 0;
-    }
+/* STEPS Section */      
+.steps h2{font-size: 18px;}
+.step span {font-size: 50px;}
+.step p{font-size: 16px;}
+.steps-box {width: 80%;margin: 0 auto;}
     
-    p {
-        font-size: 14px;
-        margin: 10px 0;
-    }
+/* REVIEWS Section */   
+.reviews h2{font-size: 22px;}
+.reviews-right p{font-size: 18px;margin-bottom: 25px;}
+.reviews img{border-radius: 12px;}
+
     
-    /* Hero section mobile layout: logo -> image -> hero-info */
-    .hero-content {
-        display: flex;
-        flex-direction: column;
-    }
+/* SERVICES Section */    
+.services h2{font-size: 18px;margin: 11px 0;margin-bottom: 35px;}
+.services-right h3{font-size: 16px;}
+.services-right p{font-size: 16px;}
+.services-box {width: 80%;margin: 0 auto;}
     
-    .logo {
-        order: 1;
-        margin-bottom: 10px;
-    }
+/* OFFER Section */ 
+.offer{width:90%;}
+.offer h2{font-size: 26px;}
+.offer-title span{font-size: 22px;}
+.offer-title h3:nth-of-type(1){font-size: 18px;margin: 10px 0;}
+.offer-title h3:nth-of-type(1){font-size: 16px;margin: 10px 0;} 
     
-    .hero-img {
-        order: 2;
-        margin: 10px 0;
-    }
+ /* CONTACT Section */     
+.contact-title span{font-size: 30px;}
+.contact-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}
+.contact-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}    
+form{width: 300px !important;margin: 0 auto !important;}
+label{font-size: 14px;}  
+
+ /* BUY Section */      
+.buy-title p{font-size: 14px;}
+.buy-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}   
+.buy-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}       
+.buy-title span{font-size: 40px;}    
+.buy img{border-radius: 12px;}
     
-    .hero-info {
-        order: 3;
-        margin-top: 10px;
-    }
-    
-    .logo img {
-        width: 180px;
-    }
-    
-    span.seven-days {
-        font-size: 28px;
-    }
-    
-    a.btn1, a.btn2, .offer a, .buy-now a, form button {
-        font-size: 14px;
-        padding: 10px 16px;
-    }
-    
-    .why-card, .service {
-        margin: 10px 0;
-        padding: 12px;
-    }
-.why-card .why-icons img {
-    display: inline-block;
-}
-.social-icons a {
-    display: inline;
-}
-.social-icons img {
-    display: inline-block;
-}
-    .copyright {
-    white-space: nowrap;
-    margin: 0 auto;
-    width:fit-content;
-    vertical-align: middle;    
-}
-.copyright img{
-    vertical-align: middle;
-}
+/* FOOTER Section */    
+.social-icons a {display: inline;}
+.social-icons img {display: inline-block;}
+.copyright {white-space: nowrap;margin: 0 auto;width:fit-content;vertical-align: middle;    }
+.copyright img{vertical-align: middle;}
 }
 
 /* Mobile - 360px and below */
@@ -694,95 +870,86 @@ label{font-size: 14px;}
 .social-icons img {display: inline-block;}
 .copyright {white-space: nowrap;margin: 0 auto;width:fit-content;vertical-align: middle;    }
 .copyright img{vertical-align: middle;}
+    
 }
 
 /* Mobile - 320px and below */
 @media screen and (max-width: 320px) {
-    body {
-        font-size: 12px;
-    }
     
-    .hero, .why, .what, .reviews, .steps, .services, 
-    .offer, .contact, .buy, .gallery, footer {
-        padding: 10px 5px;
-        margin-bottom: 10px;
-    }
+#backToTop {right: 10px;width: 40px;height: 40px;}
+
+/* HERO Section */    
+.logo img {width: 160px;}   
+.hero-info h1{font-size: 24px;margin: 12px 0;}
+.hero-info p{font-size: 16px;}
+span.seven-days {font-size: 35px;}
     
-    h1 {
-        font-size: 16px;
-        margin: 10px 0;
-    }
+/* WHY Section */ 
+.why h2{font-size: 18px;margin: 11px 0;}
+.why-description p{font-size: 15px;}    
+.why-reasons {width: 80%;margin: 0 auto;}    
+.why-card, .service {margin: 8px 0;padding: 10px;}
+.why-card .why-icons img {display: inline-block;margin: 0 5px;}
+.why-card:nth-of-type(2) .why-icons img:last-child {width: 50px;height: 50px;}    
+
+/* GALLERY Section */     
+.gallery img{border-radius: 12px;}
     
-    h2 {
-        font-size: 14px;
-        margin: 9px 0;
-    }
+ /* WHAT Section */   
+.what-left-bottom{text-align: center;}
+.what-left-bottom p{font-size: 16px;}
+.what h2{font-size: 18px;}
+.wow-title {display: inline;text-align: center;}       
+.wow-title span{margin: 0 5px;}
+.wow-title h3:nth-of-type(1){display: inline;font-size: 20px;}    
+.wow-title h3:nth-of-type(2){display: inline;font-size: 20px;}
+.what-right{width: 80%;margin: 0 auto;}
+.what-right img {width: 35px !important;height: 35px !important;}
     
-    h3 {
-        font-size: 13px;
-        margin: 8px 0;
-    }
+/* STEPS Section */      
+.steps h2{font-size: 18px;}
+.step span {font-size: 50px;}
+.step p{font-size: 16px;}
+.steps-box {width: 80%;margin: 0 auto;}
     
-    p {
-        font-size: 12px;
-        margin: 6px 0;
-        line-height: 1.4;
-    }
+/* REVIEWS Section */   
+.reviews h2{font-size: 22px;}
+.reviews-right p{font-size: 18px;margin-bottom: 25px;}
+.reviews img{border-radius: 12px;}
+
     
-    .logo img {
-        width: 140px;
-    }
+/* SERVICES Section */    
+.services h2{font-size: 18px;margin: 11px 0;margin-bottom: 35px;}
+.services-right h3{font-size: 16px;}
+.services-right p{font-size: 16px;}
+.services-box {width: 80%;margin: 0 auto;}
     
-    span.seven-days {
-        font-size: 20px;
-    }
+/* OFFER Section */ 
+.offer{width:90%;}
+.offer h2{font-size: 26px;}
+.offer-title span{font-size: 22px;}
+.offer-title h3:nth-of-type(1){font-size: 18px;margin: 10px 0;}
+.offer-title h3:nth-of-type(1){font-size: 16px;margin: 10px 0;} 
     
-    span.wow, span.first-dance {
-        font-size: 18px;
-    }
+ /* CONTACT Section */     
+.contact-title span{font-size: 30px;}
+.contact-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}
+.contact-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}    
+form{width: 300px !important;margin: 0 auto !important;}
+label{font-size: 14px;}  
+
+ /* BUY Section */      
+.buy-title p{font-size: 14px;}
+.buy-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}   
+.buy-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}       
+.buy-title span{font-size: 40px;}    
+.buy img{border-radius: 12px;}
     
-    a.btn1, a.btn2, .offer a, .buy-now a, form button {
-        font-size: 12px;
-        padding: 6px 12px;
-        width: 98%;
-    }
-    
-    .why-card, .service {
-        margin: 6px 0;
-        padding: 8px;
-    }
-    
-    .step span {
-        font-size: 32px;
-    }
-    
-    .social-icons img {
-        width: 20px;
-        height: 20px;
-    }
-    
-    input, select, textarea {
-        padding: 8px;
-        font-size: 14px;
-    }
-.why-card .why-icons img {
-    display: inline-block;
-}
-.social-icons a {
-    display: inline;
-}
-.social-icons img {
-    display: inline-block;
-}
-.copyright {
-    white-space: nowrap;
-    margin: 0 auto;
-    width:fit-content;  
-    vertical-align: middle;
-}
-.copyright img{
-    vertical-align: middle;
-}
+/* FOOTER Section */    
+.social-icons a {display: inline;}
+.social-icons img {display: inline-block;}
+.copyright {white-space: nowrap;margin: 0 auto;width:fit-content;vertical-align: middle;    }
+.copyright img{vertical-align: middle;}
 
 }
 
