@@ -602,7 +602,7 @@ a.btn2 {margin-left: 5px;}
     
 /* REVIEWS Section */   
 .reviews h2{font-size: 22px;}
-.reviews-right p{font-size: 24px;margin-bottom: 25px;}
+.reviews-right p{font-size: 24px;width: 80%;margin: 0 auto;margin-bottom: 25px;}
 .reviews img{border-radius: 12px;}
 
     
@@ -621,9 +621,9 @@ a.btn2 {margin-left: 5px;}
 .offer-title h3:nth-of-type(1){font-size: 16px;margin: 10px 0;} 
     
  /* CONTACT Section */     
-.contact-title span{font-size: 30px;}
-.contact-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}
-.contact-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}    
+.contact-title span{font-size: 38px;}
+.contact-title h2:nth-of-type(1){font-size: 30px;margin-bottom: 0;}
+.contact-title h2:nth-of-type(2){font-size: 22px;margin-top: 0;}    
 form{width: 500px !important;margin: 0 auto !important;}
 label{font-size: 14px;}  
 
