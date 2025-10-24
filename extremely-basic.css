@@ -611,7 +611,8 @@ a.btn2 {margin-left: 5px;}
 .services h2{font-size: 20px;margin: 11px 0;margin-bottom: 35px;}
 .services-right h3{font-size: 18px;}
 .services-right p{font-size: 18px;}
-.services-box {width: 80%;margin: 0 auto;}
+.services-box {width: 80%;height: 700px;margin: 0 auto;}
+.service {width: 46%;height: 200px;margin: 10px;}  
     
 /* OFFER Section */ 
 .offer{width:90%;}
