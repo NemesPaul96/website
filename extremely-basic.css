@@ -591,7 +591,7 @@ a.btn2 {margin-left: 5px;}
 .wow-title h3:nth-of-type(1){display: inline;font-size: 20px;}    
 .wow-title h3:nth-of-type(2){display: inline;font-size: 20px;}
 .what-right{width: 98%;margin: 0 auto;min-height: 450px;}
-.what-right > .why-card {width:46%; margin: 10px;height: 200px;}
+.what-right > .why-card {width:47%; margin: 10px;height: 200px;}
 .what-right img {width: 35px !important;height: 35px !important;}
     
 /* STEPS Section */      
@@ -626,7 +626,8 @@ a.btn2 {margin-left: 5px;}
 .contact-title h2:nth-of-type(2){font-size: 22px;margin-top: 0;}    
 form{width: 500px !important;margin: 0 auto !important;}
 label{font-size: 14px;}  
-
+form button {max-width: fit-content;}
+    
  /* BUY Section */      
 .buy-title p{font-size: 14px;}
 .buy-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}   
