@@ -442,8 +442,10 @@ textarea {
     background: #FFFFFF;
     padding: 2px 8px;
     margin: 0 5px;
-    text-decoration: underline;
+    text-decoration: none;
     border-radius: 3px;
+    margin-top:15px;
+    width:fit-content;
 }
 
 .banner-actions {
