@@ -965,8 +965,8 @@ span.seven-days {font-size: 35px;}
 .services h2{font-size: 18px;margin: 11px 0;margin-bottom: 35px;}
 .services-right h3{font-size: 16px;}
 .services-right p{font-size: 16px;}
-.services-box {width: 80%;margin: 0 auto;}
-.service {margin-bottom:20px;}   
+.services-box {min-height:1000px;width: 80%;margin: 0 auto;}
+.service {margin-bottom:20px;width:100%;}   
     
 /* OFFER Section */ 
 .offer{width:90%;}
