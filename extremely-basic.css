@@ -904,7 +904,7 @@ span.seven-days {font-size: 35px;}
 .why-description p {font-size: 15px;}    
 .why-reasons {width: 100%;margin: 0 auto;}    
 .why-card, .service {margin: 8px 0;padding: 10px;}
-.why .why-card {width: 100%;}
+.why .why-card {width: 100%;margin: 0 0 20px 0;}
 .why-card .why-icons img {display: inline-block;margin: 0 5px;}
 .why-card:nth-of-type(2) .why-icons img:last-child {width: 50px;height: 50px;}    
 
@@ -921,7 +921,7 @@ span.seven-days {font-size: 35px;}
 .wow-title h3:nth-of-type(2) {display: inline-block;font-size: 22px;}
 .what-right {width: 100%;margin: 0 auto;}
 .what-right img {width: 35px !important;height: 35px !important;}
- .what-right > .why-card {width: 100%;height: 200px;}
+.what-right > .why-card {width: 100%;height: 200px;margin: 0 0 20px 0;}
     
 /* STEPS Section */      
 .steps h2{font-size: 18px;}
@@ -940,6 +940,7 @@ span.seven-days {font-size: 35px;}
 .services-right h3{font-size: 16px;}
 .services-right p{font-size: 16px;}
 .services-box {width: 80%;margin: 0 auto;}
+.service {margin-bottom:20px;}   
     
 /* OFFER Section */ 
 .offer{width:90%;}
