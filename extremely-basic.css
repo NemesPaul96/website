@@ -706,7 +706,8 @@ a.btn1, a.btn2 {margin:15px auto;}
 .services h2{font-size: 18px;margin: 11px 0;margin-bottom: 35px;}
 .services-right h3{font-size: 16px;}
 .services-right p{font-size: 16px;}
-.services-box {width: 80%;margin: 0 auto;}
+.services-box {height: 1000px;width: 80%;margin: 0 auto;}
+.service {width: 100%;}
     
 /* OFFER Section */ 
 .offer{width:90%;}
@@ -793,7 +794,8 @@ a.btn1, a.btn2 {margin:15px auto;}
 .services h2{font-size: 18px;margin: 11px 0;margin-bottom: 35px;}
 .services-right h3{font-size: 16px;}
 .services-right p{font-size: 16px;}
-.services-box {width: 80%;margin: 0 auto;}
+.services-box {min-height: 1000px;width: 80%;margin: 0 auto;}
+.service {width: 100%;}   
     
 /* OFFER Section */ 
 .offer{width:90%;}
@@ -808,7 +810,8 @@ a.btn1, a.btn2 {margin:15px auto;}
 .contact-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}    
 form{width: 300px !important;margin: 0 auto !important;}
 label{font-size: 14px;}  
-
+form button {font-size: 15px;width: 100%;max-width: fit-content;}
+    
  /* BUY Section */      
 .buy-title p{font-size: 14px;}
 .buy-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}   
@@ -821,6 +824,7 @@ label{font-size: 14px;}
 .social-icons img {display: inline-block;}
 .copyright {white-space: nowrap;margin: 0 auto;width:fit-content;vertical-align: middle;    }
 .copyright img{vertical-align: middle;}
+    
 }
 
 /* Mobile - 360px and below */
@@ -876,7 +880,8 @@ a.btn1, a.btn2 {margin:15px auto;}
 .services h2{font-size: 18px;margin: 11px 0;margin-bottom: 35px;}
 .services-right h3{font-size: 16px;}
 .services-right p{font-size: 16px;}
-.services-box {width: 80%;margin: 0 auto;}
+.services-box {min-height:1000px;width: 80%;margin: 0 auto;}
+.service {width:100%;}  
     
 /* OFFER Section */ 
 .offer{width:90%;}
@@ -891,7 +896,8 @@ a.btn1, a.btn2 {margin:15px auto;}
 .contact-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}    
 form{width: 300px !important;margin: 0 auto !important;}
 label{font-size: 14px;}  
-
+form button {width:100%;max-width: fit-content;font-size: 15px;}
+    
  /* BUY Section */      
 .buy-title p{font-size: 14px;}
 .buy-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}   
