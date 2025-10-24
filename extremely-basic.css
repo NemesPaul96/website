@@ -441,11 +441,11 @@ textarea {
     color: #2d3748 !important;
     background: #FFFFFF;
     padding: 2px 8px;
-    margin: 0 5px;
     text-decoration: none;
     border-radius: 3px;
     margin-top:15px;
     width:fit-content;
+    margin: 15px auto 0 auto;
 }
 
 .banner-actions {
