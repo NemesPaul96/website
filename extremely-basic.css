@@ -483,11 +483,16 @@ textarea {
 .hero-info h1{font-size: 24px;margin: 12px 0;}
 .hero-info p{font-size: 16px;}
 span.seven-days {font-size: 35px;}
+a.btn1, a.btn2 {display: inline-block;}
+a.btn1 {margin-right: 5px;}
+a.btn2 {margin-left: 5px;}
     
 /* WHY Section */ 
+.why{min-height: 400px;}
 .why h2{font-size: 18px;margin: 11px 0;}
 .why-description p{font-size: 15px;}    
-.why-reasons {width: 80%;margin: 0 auto;}    
+.why-reasons {width: 96%;margin: 0 auto;}  
+.why .why-card {width: 44%;min-height: 215px;margin: 10px 20px;}
 .why-card, .service {margin: 8px 0;padding: 10px;}
 .why-card .why-icons img {display: inline-block;margin: 0 5px;}
 .why-card:nth-of-type(2) .why-icons img:last-child {width: 50px;height: 50px;}    
@@ -503,26 +508,29 @@ span.seven-days {font-size: 35px;}
 .wow-title span{margin: 0 5px;}
 .wow-title h3:nth-of-type(1){display: inline;font-size: 20px;}    
 .wow-title h3:nth-of-type(2){display: inline;font-size: 20px;}
-.what-right{width: 80%;margin: 0 auto;}
+.what-right{width: 98%;margin: 0 auto;min-height: 450px;}
+.what-right > .why-card {width:47%; margin: 10px;height: 200px;}
 .what-right img {width: 35px !important;height: 35px !important;}
     
 /* STEPS Section */      
-.steps h2{font-size: 18px;}
-.step span {font-size: 50px;}
-.step p{font-size: 16px;}
+.steps h2{font-size: 26px;}
+.step span {font-size: 70px;}
+.step p{font-size: 20px;}
 .steps-box {width: 80%;margin: 0 auto;}
     
 /* REVIEWS Section */   
 .reviews h2{font-size: 22px;}
-.reviews-right p{font-size: 18px;margin-bottom: 25px;}
+.reviews-right p{font-size: 24px;width: 80%;margin: 0 auto;margin-bottom: 25px;}
 .reviews img{border-radius: 12px;}
 
     
-/* SERVICES Section */    
-.services h2{font-size: 18px;margin: 11px 0;margin-bottom: 35px;}
-.services-right h3{font-size: 16px;}
-.services-right p{font-size: 16px;}
-.services-box {width: 80%;margin: 0 auto;}
+/* SERVICES Section */   
+.services {min-height: 900px !important;}
+.services h2{font-size: 20px;margin: 11px 0;margin-bottom: 35px;}
+.services-right h3{font-size: 18px;}
+.services-right p{font-size: 18px;}
+.services-box {width: 80%;height: 700px;margin: 0 auto;}
+.service {width: 46%;height: 200px;margin: 10px;}  
     
 /* OFFER Section */ 
 .offer{width:90%;}
@@ -532,12 +540,13 @@ span.seven-days {font-size: 35px;}
 .offer-title h3:nth-of-type(1){font-size: 16px;margin: 10px 0;} 
     
  /* CONTACT Section */     
-.contact-title span{font-size: 30px;}
-.contact-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}
-.contact-title h2:nth-of-type(2){font-size: 18px;margin-top: 0;}    
-form{width: 300px !important;margin: 0 auto !important;}
+.contact-title span{font-size: 38px;}
+.contact-title h2:nth-of-type(1){font-size: 30px;margin-bottom: 0;}
+.contact-title h2:nth-of-type(2){font-size: 22px;margin-top: 0;}    
+form{width: 500px !important;margin: 0 auto !important;}
 label{font-size: 14px;}  
-
+form button {max-width: fit-content;}
+    
  /* BUY Section */      
 .buy-title p{font-size: 14px;}
 .buy-title h2:nth-of-type(1){font-size: 25px;margin-bottom: 0;}   
@@ -549,8 +558,8 @@ label{font-size: 14px;}
 .social-icons a {display: inline;}
 .social-icons img {display: inline-block;}
 .copyright {white-space: nowrap;margin: 0 auto;width:fit-content;vertical-align: middle;    }
-.copyright img{vertical-align: middle;}
-    
+.copyright img{vertical-align: middle;}    
+
 }
 
 
