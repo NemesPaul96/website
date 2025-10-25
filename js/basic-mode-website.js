@@ -19,6 +19,7 @@
         // Set session storage to persist basic mode
         try {
             sessionStorage.setItem('forceBasicMode', 'true');
+            sessionStorage.removeItem('forceExtremelyBasicMode');
         } catch (e) {
             console.log('Session storage not available');
         }
