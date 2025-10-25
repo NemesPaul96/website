@@ -10,6 +10,7 @@
         // Set session storage
         try {
             sessionStorage.setItem('forceExtremelyBasicMode', 'true');
+            essionStorage.removeItem('forceBasicMode');
         } catch (e) {
             console.log('Session storage not available');
         }
