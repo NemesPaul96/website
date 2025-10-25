@@ -819,20 +819,24 @@ a:hover {color: #2c5aa0;text-decoration: underline;}
         });
     }
 
-    // Keep your existing navigation functions
-    function goBackToWebsite() {
-        try {
-            window.location.href = 'index.html';
-        } catch (error) {
-            window.location = 'index.html';
+function goBackToWebsite() {
+    try {
+        if (typeof sessionStorage !== 'undefined') {
+            sessionStorage.removeItem('forceBasicMode');
+            sessionStorage.removeItem('forceExtremelyBasicMode');
         }
+        window.location.href = 'index.html';
+    } catch (error) {
+        window.location = 'index.html';
     }
+}
 
     function goToBasicMode() {
         try {
             if (window.fallbackTimeout) clearTimeout(window.fallbackTimeout);
             if (typeof sessionStorage !== 'undefined') {
                 sessionStorage.setItem('forceBasicMode', 'true');
+                sessionStorage.removeItem('forceExtremelyBasicMode');
             }
             var basicModeUrl = 'index.html?basic=true&timestamp=' + Date.now();
             window.location.href = basicModeUrl;
@@ -846,6 +850,7 @@ a:hover {color: #2c5aa0;text-decoration: underline;}
             if (window.fallbackTimeout) clearTimeout(window.fallbackTimeout);
             if (typeof sessionStorage !== 'undefined') {
                 sessionStorage.setItem('forceExtremelyBasicMode', 'true');
+                sessionStorage.removeItem('forceBasicMode');
             }
             var extremelyBasicUrl = 'index.html?extremelyBasic=true&timestamp=' + Date.now();
             window.location.href = extremelyBasicUrl;
